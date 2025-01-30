@@ -1,0 +1,101 @@
+html {
+  font-weight: 100;
+  font-size: $font-size-initial;
+  overflow: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  color: $text-color;
+
+  & > div {
+    font-family: $font-family-base;
+  }
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+a,
+.dropdown-item,
+.btn {
+  cursor: pointer;
+  transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out, border-color 0.1s ease-in-out;
+  font-family: $font-family-base;
+}
+
+.dropdown-item {
+  &.active, &:active {
+    background-color: $gray-light;
+  }
+}
+
+th {
+  font-weight: 600;
+}
+
+label {
+  font-weight: 400;
+}
+
+strong {
+  font-weight: 700;
+}
+
+ul ul,
+ol ul {
+  list-style: none;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding-left: 0;
+}
+
+.hide_row .row{
+    display: none !important;
+}
+
+.hide_styles_datepicker .mx-input {
+    cursor: pointer !important;
+    border: none !important;
+    padding: 0 8px !important;
+}
+
+.hide_styles_datepicker .mx-input-append {
+    display: none !important;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb{
+  border-width: 1px solid var(--gray-text-dark);
+  border-radius: 10px;
+  background-color: var(--gray-text-dark);
+}
+
+.form-control {
+  font-size: $font-size-base + px !important;
+  font-weight: normal !important;
+  // color: #495057 !important;
+}
+
+.custom_styles {
+  &-sidebar {
+    &-link {
+      display: flex !important;
+      flex-direction: column;
+    }
+  }
+}
+
+.VueTables__row  {
+  cursor: pointer !important;
+}

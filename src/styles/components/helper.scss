@@ -1,0 +1,145 @@
+/*.directory {
+  &-title {
+    border: 1px 0 solid #E9ECEF !important;
+  }
+  &-alert {
+    &-success {
+      position: absolute !important;
+      width: 400px !important;
+      bottom: 24px;
+
+      &-cancel {
+        display: flex !important;
+        align-items: center !important;
+        width: 89px;
+        border-radius: 7px !important;
+        background: rgba(255, 255, 255, 0.35) !important;
+        margin-right: 24px !important;
+        padding-left: 12px !important;
+      }
+    }
+    &-danger {
+      position: absolute !important;
+      width: 540px !important;
+      bottom: 24px;
+    }
+  }
+}*/
+.theme-helper {
+  width: 516px;
+  position: fixed;
+  right: -516px;
+  bottom: 0;
+  z-index: 101;
+  top: 60px;
+  @include transition(right $sidebar-transition-time ease-in-out);
+
+  &.theme-helper-opened {
+    right: 0;
+    top: 60px;
+  }
+
+  &-content {
+    border-radius: 0;
+    overflow: auto;
+    bottom: 0;
+    height: 100%;
+
+    &.-paddingless {
+      padding: 0;
+    }
+
+    &-close {
+      position: absolute;
+      top: 18px;
+      right: 24px;
+      z-index: 100;
+    }
+
+    &-main {
+      &-header {
+        padding: 12px 24px;
+        border-bottom: 1px solid var(--border-color);
+        height: 48px;
+        position: relative;
+
+        &-button {
+          margin-right: 8px;
+        }
+      }
+
+      &-subheader {
+        padding: 7px 24px;
+        border-bottom: 1px solid var(--border-color);
+        display: flex;
+
+        &-link {
+          color: $primary;
+          cursor: pointer;
+
+          i {
+            margin-right: 8px;
+          }
+        }
+      }
+
+      &-body {
+        padding: 24px;
+      }
+    }
+  }
+
+  .theme-settings {
+    .form-group, .colors-list {
+      margin-bottom: $spacer * 2;
+    }
+  }
+
+  .theme-sharing {
+    font-size: $font-size-lg;
+    cursor: pointer;
+  }
+
+  .abc-radio-warning input[type="radio"]:not(:checked) + label::before {
+    background-color: theme-color('warning');
+  }
+
+  .abc-radio-secondary input[type="radio"]:not(:checked) + label::before {
+    background-color: theme-color('secondary');
+  }
+
+  .abc-radio {
+    & > label {
+      padding-left: 25px;
+
+      &:before, &:after {
+        outline: none !important;
+        transition: $transition-base;
+        margin-left: 4px;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    
+    width: 100%;
+
+    &-opened {
+      left: 0;
+    }
+
+    &-content {
+      &-main {
+        &-header {
+          height: auto;
+          min-height: 48px;
+          padding-bottom: 4px;
+
+          &-button {
+            margin-bottom: 8px;
+          }
+        }
+      }
+    }
+  }
+}

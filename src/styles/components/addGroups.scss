@@ -1,0 +1,40 @@
+.add_groups {
+  &-header {
+    padding: 12px 24px;
+    border-bottom: 1px solid var(--border-color);
+    min-height: 51px;
+  }
+
+  &-subheader {
+    color: $info;
+    border-bottom: 1px solid var(--border-color);
+    padding: 8px 24px;
+
+    &-link {
+      cursor: pointer;
+
+      i {
+        margin-right: 8px;
+      }
+    }
+  }
+
+  &-body {
+    height: calc(var(--vh, 1vh) * 100 - 190px);
+    overflow: auto;
+    padding: 0 24px;
+
+    &-title {
+      padding: 24px 16px 0;
+      margin: 0;
+    }
+
+    &-search {
+      padding: 16px 0 0;
+
+      .input-group-text {
+        padding: 8px 12px;
+      }
+    }
+  }
+}

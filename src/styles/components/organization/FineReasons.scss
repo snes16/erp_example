@@ -1,0 +1,124 @@
+.fine_reasons {
+  &-table {
+    &-title {
+      width: 55%;
+      height: 56px !important;
+      vertical-align: middle !important;
+      padding-left: 24px !important;
+    }
+    &-default_percentage {
+      width: 19%;
+      vertical-align: middle !important;
+      padding: 0 24px 0 16px !important;
+    }
+
+    &-default_amount {
+      width: 15%;
+      vertical-align: middle !important;
+    }
+  }
+
+  td {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 20px;
+    color: $gray-700;
+  }
+
+  &-details {
+    &-removing_modal {
+      &-header {
+        padding: 16px 16px 12px !important;
+      }
+      &-body {
+        padding: 12px 16px !important;
+      }
+    }
+
+    &-text {
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 20px;
+      color: $gray-700;
+
+      &-symbols {
+        color: $gray-text;
+      }
+    }
+
+    &-input {
+      &-plain {
+        outline: none;
+        border: none;
+        width: 190px;
+        font-weight: 400;
+        color: $gray-700;
+        padding: 0;
+
+        &.-padding {
+          padding: 6px;
+        }
+
+        &::placeholder {
+          color: $gray-text;
+          font-weight: 400;
+          font-height: 20px;
+        }
+      }
+
+      input {
+        color: $gray-700;
+      }
+    }
+    &-body {
+      &-right {
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+        width: 190px;
+
+        &.-number {
+          height: 20px;
+        }
+
+        .input-plain {
+          margin: 0;
+        }
+      }
+    }
+
+    &-buttons {
+      width: 140px;
+      height: 24px;
+      padding: 4px 16px;
+
+      .throbber-button-block {
+        bottom: 15%;
+      }
+
+      &.-solo {
+        width: 156px;
+      }
+
+      &.-primary_borders {
+        border-color: $primary !important;
+      }
+    }
+
+    &-titles {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      white-space: nowrap;
+      margin-bottom: 4px;
+
+      &-left_block {
+        width: 270px;
+        hyphens: auto;
+        overflow-wrap: normal;
+        background: none;
+        font-weight: 600;
+      }
+    }
+  }
+}

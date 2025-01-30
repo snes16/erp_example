@@ -1,0 +1,8 @@
+.badge {
+  &.badge-custom {
+    font-weight: 400;
+    padding: 4px 11px;
+    background-color: $default;
+    color: $gray-text;
+  }
+}

@@ -1,0 +1,37 @@
+@import '@/styles/app';
+
+.add_roles {
+
+    &-header {
+        height: 48px;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    &-link {
+        cursor: pointer;
+        padding: 8px 24px;
+        border-bottom: 1px solid var(--border-color);
+        color: #005792;
+        font-size: 11px;
+        margin: 0;
+    }
+
+    &-title {
+        font-size: 17px;
+        font-weight: 600;
+        padding: 24px 94px 16px 24px;
+        margin: 0;
+    }
+
+    &-search_field {
+        padding: 0 24px 10px 24px !important;
+    }
+
+    &-role {
+        display: flex;
+        justify-content: space-between;
+        padding: 11px 24px;
+        border-bottom: 1px solid var(--border-color);
+    }
+}
+

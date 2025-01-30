@@ -1,0 +1,221 @@
+.materials {
+  display: flex;
+  margin: 0 -10px;
+  flex-wrap: wrap;
+
+  &-col {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 10px;
+  }
+
+  &-container {
+    display: grid;
+    grid-template-rows: [start] auto [middle] auto [end];
+    grid-template-columns: [start] 33.33333% [breakpoint] 33.33333% [breakpoint] 33.33333% [end];
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  &-block {
+    padding: 0 10px;
+    margin-bottom: 20px;
+
+    &:first-child {
+      grid-area: start / start / middle / breakpoint 1;
+    }
+
+    &:nth-child(2) {
+      grid-area: start / breakpoint 1 / middle / breakpoint 2;
+    }
+
+    &:nth-child(3) {
+      grid-area: start / breakpoint 2 / middle / end;
+    }
+
+    &:nth-child(4) {
+      grid-area: middle / start / end /end;
+    }
+
+    &-card {
+      &-header {
+        padding: 20px 20px 16px;
+        border-bottom: 1px solid var(--border-color);
+        display: flex;
+      }
+
+      &-link {
+        padding: 20px 20px 0;
+
+        &-title {
+          margin: 0;
+          padding-bottom: 8px;
+        }
+
+        &-link {
+          padding: 10px 16px;
+          background: #F9FBFD;
+          margin: 0;
+        }
+      }
+
+      &-body {
+        padding: 16px 24px;
+        max-height: 295px;
+        overflow: auto;
+
+        &-list {
+          padding: 16px 0;
+          display: flex;
+          flex-wrap: wrap;
+        }
+      }
+    }
+  }
+
+  &-files {
+    padding: 20px;
+
+    &-field {
+      display: flex;
+      flex-direction: column;
+
+      &-file {
+        display: flex;
+        align-items: center;
+        padding-bottom: 12px;
+
+        &-image {
+          display: flex;
+          width: 80px;
+          height: 80px;
+          background: rgba(22, 18, 16, 0.2);
+          border-radius: 8px;
+          margin-right: 22px;
+          cursor: pointer;
+
+          &:hover &-active {
+            display: flex;
+          }
+
+          &-active {
+            width: 100%;
+            display: none;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: space-between;
+
+            &-remove {
+              margin: 4px 4px 0 0;
+            }
+
+            &-field_link {
+              width: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 32px;
+              background: rgba(26, 134, 208, 0.1);
+              backdrop-filter: blur(8px);
+              border-radius: 0 0 8px 8px;
+              z-index: 100;
+
+              &-link {
+
+              }
+            }
+          }
+        }
+
+        &-description {
+          width: 306px;
+          color: var(--black-text);
+          text-decoration: none;
+          margin: 0;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          &:hover {
+            color: var(--info);
+            text-decoration: none;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  .vue-dropzone {
+    height: 241px;
+    border-radius: 8px;
+
+    &.-disabled {
+      background-color: var(--bg-color);
+    }
+  }
+
+  .dropzone-custom-content {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .dropzone-custom-title {
+    font-size: 11px;
+  }
+
+  @include media-breakpoint-down(xl) {
+    &-container {
+      grid-template-columns: [start] 50% [middle] 50% [end];
+    }
+
+    &-block {
+      &:first-child {
+        grid-area: start / start / middle / middle;
+      }
+
+      &:nth-child(2) {
+        grid-area: middle / start / end / middle;
+      }
+
+      &:nth-child(3) {
+        grid-area: start / middle / middle / end;
+      }
+
+      &:nth-child(4) {
+        grid-area: middle / middle / end /end;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    &-container {
+      grid-auto-rows: auto;
+    }
+
+    &-block {
+      &:first-child {
+        grid-area: 1 / start / 2 / end;
+      }
+
+      &:nth-child(2) {
+        grid-area: 2 / start / 3 / end;
+      }
+
+      &:nth-child(3) {
+        grid-area: 3 / start / 4 / end;
+      }
+
+      &:nth-child(4) {
+        grid-area: 4 / start / 5 /end;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &-col {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+}

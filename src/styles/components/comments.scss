@@ -1,0 +1,29 @@
+.comments {
+  &-comment {
+    display: flex;
+    margin-bottom: 16px;
+
+    &-avatar {
+      margin-right: 12px;
+
+      &.avatar {
+        flex: 0 0 32px;
+        max-width: 32px;
+        height: 32px;
+      }
+    }
+
+    &-main {
+      flex: 1 1 100%;
+      max-width: 100%;
+
+      &-row {
+        margin-bottom: 4px;
+      }
+
+      &-date, &-event {
+        color: $gray-text;
+      }
+    }
+  }
+}

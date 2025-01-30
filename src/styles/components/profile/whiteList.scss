@@ -1,0 +1,87 @@
+.white_list {
+  &-watch {
+    &-users {
+      max-height: calc(100vh - 274px);
+      overflow: auto;
+      padding-bottom: 16px;
+      margin-bottom: -24px;
+
+      &-user {
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding: 8px 0;
+        border-bottom: 1px solid $border-color;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        &-info {
+          display: flex;
+          flex-direction: column;
+          flex: 0 0 calc(60% - 48px);
+          max-width: calc(60% - 48px);
+          padding-left: 12px;
+          white-space: nowrap;
+
+          b {
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+
+        &-group {
+          display: flex;
+          flex-direction: column;
+          flex: 0 0 40%;
+          max-width: 40%;
+          padding-right: 24px;
+
+          &-tooltip {
+            .tooltip-inner {
+              max-width: none;
+              padding: 10px 16px;
+              display: flex;
+              align-items: center;
+              white-space: nowrap;
+            }
+          }
+        }
+
+        &-delete {
+          position: absolute;
+          right: 0;
+          top: 50%;
+          cursor: pointer;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+
+  &-add {
+    &-body {
+      margin: 0 -24px -24px;
+      padding: 0 24px 24px;
+      overflow: auto;
+      height: calc(100vh - 244px);
+      border-top: 1px solid $border-color;
+
+      &-title {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
+        padding: 10px 24px;
+        margin: -1px -24px 0;
+
+        p {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

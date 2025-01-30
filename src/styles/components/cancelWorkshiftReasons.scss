@@ -1,0 +1,86 @@
+.cancel_workshift_reasons {
+
+    &-breadcrumbs {
+        cursor: default;
+        font-size: 11px;
+        color: #9DA8AF;
+        margin: 0;
+
+        &-link {
+            cursor: pointer;
+            text-decoration: none;
+
+            &:hover {
+                color: #9DA8AF;
+            }
+            &:visited {
+                color: #9DA8AF;
+            }
+        }
+    }
+
+    &-header {
+        cursor: default;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 24px;
+
+        &-title {
+            font-weight: 600;
+            font-size: 20px;
+            margin: 0;
+        }
+    }
+
+    &-table {
+        padding: 0;
+        box-shadow: 0px 8px 20px rgba(75, 102, 171, 0.08);
+
+        &-values {
+
+            &-title {
+                cursor: pointer;
+                // padding: 0 12px;
+            }
+
+            &-count_workshifts {
+                cursor: pointer;
+                // text-align: center;
+            }
+        }
+
+        &-column {
+            
+
+            &-title {
+                padding-left: 24px !important;
+            }
+
+            &-count_workshifts {
+                padding-right: 24px !important;
+                text-align: right;
+                padding: 12 24px !important;
+            }
+
+        }
+
+        &-footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 16px 30px;
+            border-top: 1px solid var(--border-color);
+
+            &-pagination {
+                margin: 0;
+            }
+
+            &-per_page {
+                display: flex;
+                padding: 6px 0 6px 12px;
+                border: 1px solid #EAF0F6;
+                border-radius: 7px;
+            }
+        }
+    }
+}

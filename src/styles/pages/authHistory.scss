@@ -1,0 +1,109 @@
+.auth_history {
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+
+    &-button {
+      &.btn {
+        padding-left: 24px;
+        padding-right: 24px;
+
+        &:disabled {
+          color: $gray-text;
+          border-color: $gray-text;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &-body {
+    &-search {
+      padding: 0 24px 16px;
+      border-bottom: 1px solid var(--border-color);
+
+      .input-group-text {
+        padding: 8px 12px;
+      }
+    }
+
+    &-table {
+      &-header {
+        display: flex;
+        padding: 16px 0;
+        border-bottom: 1px solid $border-color;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      &-body {
+        &-row {
+          display: flex;
+          padding: 8px 0;
+          align-items: center;
+        }
+
+        &-collapse {
+          background-color: $body-bg;
+        }
+      }
+
+      &-cell {
+        padding: 0 24px;
+
+        &.-user, &.-date, &.-ip {
+          flex: 0 0 20%;
+          max-width: 20%;
+        }
+
+        &.-device {
+          flex: 0 0 30%;
+          max-width: 30%;
+        }
+
+        &.-action {
+          flex: 0 0 10%;
+          max-width: 10%;
+        }
+
+        &.-ip, &.-action {
+          display: flex;
+          align-items: center;
+        }
+
+        &-checkbox {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+
+          &.abc-checkbox label {
+            &:before, &:after {
+              top: -3px;
+            }
+          }
+        }
+
+        &-arrow {
+          margin-left: 8px;
+          transition: .2s;
+          cursor: pointer;
+
+          &.-active {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+
+    &-empty {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 160px 0 214px;
+    }
+  }
+}

@@ -1,0 +1,347 @@
+@import "../styles/theme";
+
+.schedule {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+  background: $body-bg;
+
+  &-error {
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    &-image {
+      height: 144px;
+      width: 144px;
+      margin-bottom: 24px;
+    }
+  }
+
+  &-container {
+    width: 646px;
+    max-width: 100%;
+
+    &-card {
+      padding: 20px 24px;
+
+      &-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+
+        &-label {
+          flex: 0 0 calc(100% - 343px);
+          max-width: calc(100% - 343px);
+          color: $gray-text;
+        }
+
+        &-content {
+          flex: 1 1 100%;
+          max-width: 100%;
+          display: flex;
+          align-items: center;
+
+          .btn-default {
+            border-right: none;
+
+            &:last-child {
+              border-right: 1px solid $gray-400;
+            }
+
+            &.-disabled {
+              border-color: $gray-400;
+              color: $gray-text;
+              opacity: 1;
+
+              &:active, &:hover {
+                background-color: $default;
+                color: $gray-text;
+              }
+            }
+          }
+        }
+      }
+
+      &-table {
+        background-color: $gray-200;
+        padding: 16px;
+        border-radius: 8px;
+        margin-bottom: 16px;
+
+        &-row {
+          display: flex;
+          align-items: stretch;
+          background-color: white;
+          border-bottom: 1px solid $gray-200;
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          &.-head {
+            background-color: $body-bg;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 11px;
+          }
+
+          &.-head &-cell.-day {
+            border-right: none;
+          }
+
+          &-cell {
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+
+            &.-day {
+              flex: 0 0 54px;
+              max-width: 54px;
+              border-right: 1px solid $gray-200;
+              justify-content: center;
+              font-weight: 600;
+              flex-direction: column;
+            }
+
+            &.-time {
+              flex: 0 0 84px;
+              max-width: 84px;
+
+              .mx-datepicker {
+                margin: 0 -4px;
+              }
+            }
+
+            &.-message {
+              flex: 1 1 100%;
+              max-width: 100%;
+            }
+
+            &-title, &-subtitle {
+              margin: 0;
+            }
+
+            &-subtitle {
+              font-size: 11px;
+            }
+
+            &-actions {
+              width: 100%;
+              display: flex;
+              justify-content: flex-end;
+            }
+          }
+        }
+      }
+
+      &-footer {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  .mx {
+    &-datepicker {
+      width: 73px;
+      font-weight: 400;
+      font-family: inherit;
+      font-size: inherit;
+
+      &:hover .mx-input {
+        border-color: $gray-400!important;
+      }
+
+      &.-error {
+        .mx-input {
+          &, &::placeholder {
+            color: $danger;
+          }
+        }
+      }
+    }
+
+    &-calendar {
+      padding: 0;
+      font-weight: 400;
+      font-family: inherit;
+      font-size: inherit;
+
+      &-header {
+        display: none;
+      }
+
+      &-content {
+        width: 100px;
+
+        .cell.actived {
+          background-color: $gray-200;
+          color: inherit;
+        }
+      }
+    }
+
+    &-time {
+      &-list {
+        &::-webkit-scrollbar-thumb{
+          border-width: 1px solid var(--gray-text-dark);
+          border-radius: 10px;
+          background-color: var(--gray-text-dark);
+          box-shadow: none;
+        }
+
+        &::-webkit-scrollbar {
+          width: 6px;
+          height: 6px;
+        }
+
+        .mx-time-picker-item {
+          padding-left: 30px;
+        }
+      }
+    }
+
+    &-input {
+      padding: 0 4px!important;
+      box-shadow: none;
+      border: 1px solid transparent!important;
+      border-radius: 8px;
+      background-color: transparent;
+      font-weight: 400;
+      font-family: inherit;
+      font-size: inherit;
+
+      &::placeholder {
+        color: $gray-text;
+      }
+
+      &-append {
+        display: inline!important;
+        color: $text-color;
+        right: -4px;
+      }
+
+      &-wrapper {
+        font-weight: 400;
+        font-family: inherit;
+        font-size: inherit;
+      }
+    }
+
+    &-clear {
+      &-icon {
+        display: none;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 16px 0;
+
+    &-error {
+      padding: 0 16px;
+    }
+
+    &-container {
+      &-header {
+        padding: 0 16px;
+      }
+
+      &-card {
+        background-color: transparent;
+        padding: 0;
+        box-shadow: none;
+
+        &-row {
+          padding: 0 16px;
+          flex-wrap: wrap;
+
+          &-label, &-content {
+            flex: 0 0 100%;
+            max-width: 100%;
+          }
+
+          &-content {
+            .btn {
+              padding: 8px 12px;
+            }
+          }
+        }
+
+        &-table {
+          border-radius: 0;
+          margin-bottom: 48px;
+
+          &-row {
+            &-cell {
+              padding: 12px 4px;
+
+              &.-day {
+                flex: 0 0 45px;
+                max-width: 45px;
+                padding: 12px 8px;
+              }
+
+              &.-time {
+                flex: 0 0 63px;
+                max-width: 63px;
+              }
+            }
+          }
+        }
+
+        &-footer {
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          padding: 10px 24px;
+          background-color: white;
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+        }
+      }
+    }
+  }
+}
+
+.tooltip-inner {
+  max-width: 300px;
+  padding: 8px 16px;
+}
+
+.btn {
+  padding: 8px 24px;
+
+  &-sm {
+    padding: 4px 16px;
+  }
+}
+
+div.toasted {
+  @include media-breakpoint-down(xs) {
+    &-container {
+      &.bottom-center {
+        right: 30px;
+        left: 30px;
+        width: auto;
+        min-width: auto;
+        bottom: 64px;
+      }
+
+      div.toasted {
+        &.default {
+          background-color: $text-color;
+          color: white;
+        }
+      }
+    }
+  }
+}

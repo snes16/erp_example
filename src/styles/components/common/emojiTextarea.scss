@@ -1,0 +1,45 @@
+.emoji_textarea {
+  position: relative;
+
+  &-area {
+    width: 100%;
+  }
+
+  span.send-button {
+    position: absolute;
+    right: 4px;
+    bottom: 8px;
+    cursor: pointer;
+    padding: 0;
+
+    .icon-emoticon {
+      height: 16px;
+      width: 16px;
+      display: block;
+
+      &:before {
+        display: block;
+      }
+    }
+  }
+
+  .emoji-wrapper {
+    .composer-popover.active {
+      bottom: -155px;
+      z-index: 1;
+    }
+
+    .composer-popover-input, .tone-category-group {
+      display: none;
+    }
+
+    .composer-emoji-popover {
+      .composer-popover-body {
+        position: relative;
+        top: auto!important;
+        bottom: auto;
+        height: 105px;
+      }
+    }
+  }
+}

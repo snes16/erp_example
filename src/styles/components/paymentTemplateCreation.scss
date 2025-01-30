@@ -1,0 +1,434 @@
+.payment_template {
+
+  div.dropdown {
+    display: inline-flex !important;
+  }
+
+  i.btn-remove {
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 20px;
+    width: 20px;
+  }
+
+  &-modal_title {
+    margin-left: -6px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    height: 30px;
+    color: $gray-700;
+    &::placeholder {
+      color: $gray-text;
+    }
+  }
+
+  &-delete_modal {
+    width: 600px !important;
+
+    &-header {
+      padding: 16px 24px 12px 24px !important;
+    }
+    &-body {
+      padding: 12px 24px !important;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 20px;
+    }
+    &-footer {
+      padding: 12px 16px 16px 16px !important;
+
+      button {
+        margin-left: 10px;
+        padding: 8px 29px;
+      }
+    }
+  }
+
+  &-text {
+    &-breadcrumbs {
+      font-size: 11px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 16px;
+    }
+    &-type {
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 20px;
+    }
+  }
+  &-tab {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color);
+    margin: 0 24px;
+
+    &:hover > &-trash_icon {
+      fill: $gray-700;
+    }
+
+    &-trash_icon {
+      cursor: pointer;
+      fill: $white;
+    }
+      &-title {
+      margin: 0;
+    }
+  }
+
+
+  &-header {
+    &-button {
+      width: 156px;
+      height: 24px;
+      border-color: $primary !important;
+      .throbber-button-block {
+        bottom: 15%;
+      }
+    }
+  }
+
+  &-text {
+    &-gray {
+      color: $gray-text;
+      font-weight: 400;
+    }
+  }
+
+  &-line {
+    margin: 16px 0;
+
+    &-choice_block {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 10px 0 0 16px;
+
+      &-option {
+        display: flex;
+        height: 32px;
+        align-items: flex-start;
+        white-space: nowrap;
+        margin-bottom: 8px;
+
+        &-text {
+          font-weight: 600;
+          margin-top: 6px;
+          flex: 0 0 58%;
+          max-width: 58%;
+
+          &::placeholder {
+            color: $gray-text;
+          }
+        }
+
+        &-remove_icon {
+          margin: 6px 2px 2px;
+        }
+
+        &-value {
+          border: none;
+          outline: none;
+          padding: 6px 0 6px 8px;
+          width: 150px;
+
+          &.-editable_fields {
+          }
+
+          &::placeholder {
+            color: $gray-text;
+          }
+
+          &:disabled {
+            background: none;
+          }
+        }
+
+        &-delete {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+  &-parameters {
+    &-title {
+      display: flex;
+      justify-content: space-between;
+      padding: 24px 0;
+      margin: 0 24px;
+      border-top: 1px solid $border-color;
+
+      &-text {
+        margin: 0;
+        font-weight: 600;
+        font-size: 17px;
+      }
+
+      &-add_parameter {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        &-text {
+          margin: 0;
+          margin-right: 8px;
+          font-weight: 400;
+          color: $cyan;
+        }
+
+        &-image {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+
+    &-parameter_field {
+      padding: 0 0 24px;
+      cursor: pointer;
+
+      &-parameter {
+        padding-top: 12px;
+
+        &-container {
+          padding: 0 24px;
+          background-color: white;
+
+          &:not(.-disabled):hover {
+            background-color: var(--bg-color);
+
+            input, textarea {
+              background-color: var(--bg-color);
+            }
+
+            i {
+              display: block;
+            }
+          }
+        }
+
+        &:first-child {
+          padding-top: 0;
+        }
+
+        &.sortable-fallback {
+          opacity: 1 !important;
+        }
+
+        &.-dragging &-container {
+          background-color: var(--bg-color);
+
+          input, textarea {
+            background-color: var(--bg-color);
+          }
+
+          i {
+            display: block;
+          }
+        }
+
+        &-content_static {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: flex-start;
+          white-space: nowrap;
+          border-bottom: 1px solid $border-color;
+        }
+
+        &-content {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          white-space: nowrap;
+          justify-content: space-between;
+          border-bottom: 1px solid $border-color;
+          padding: 16px 0 !important;
+
+          &-icon {
+            display: none;
+            position: absolute;
+            left: 8px;
+          }
+        }
+
+        &:last-child &-content {
+          border-bottom: none;
+        }
+
+        &-chosen {
+          background: var(--bg-color);
+
+          input {
+            background: var(--bg-color);
+          }
+        }
+
+        &-dragging {
+          background: var(--bg-color);
+
+          i {
+            display: block;
+          }
+
+          span {
+            opacity: 1;
+            background: var(--bg-color);
+          }
+
+
+          input {
+            background: var(--bg-color);
+          }
+        }
+
+        &-ghost {
+          height: 2px;
+          background: $cyan-ghost;
+          margin: 0 24px;
+          padding-top: 0;
+
+          input, button, div {
+            display: none;
+          }
+        }
+
+        &-type {
+          flex: 0 0 31%;
+          max-width: 31%;
+
+          .custom_show.btn-group.show {
+            display: inline-flex !important;
+          }
+
+          &::placeholder {
+            color: $gray-text;
+          }
+        }
+
+        &-value {
+          display: flex;
+          border: none;
+          outline: none;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          align-items: center;
+          width: 58%;
+
+          &-title {
+            display: inline-flex;
+            font-weight: 600;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-right: 8px;
+          }
+
+          &.-multi_line {
+            margin-top: 4px;
+          }
+
+          &::placeholder {
+            color: $gray-text;
+          }
+
+          &:disabled {
+            background: none;
+          }
+
+          .-textarea {
+            margin: auto 0;
+            padding: 0;
+          }
+
+          &-textarea {
+            padding: 6px 16px;
+            font-weight: 400;
+            color: $gray-700;
+            width: 65%;
+
+            &:disabled {
+              background: none;
+            }
+          }
+        }
+
+        &-image {
+          margin: 2px;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+        }
+
+        &-input {
+          flex: 0 0 40%;
+          max-width: 40%;
+          margin-right: 5%;
+          margin-top: 8px;
+        }
+
+        &-use_dossier {
+          width: 100%;
+          padding: 10px 0 0;
+          font-size: 11px;
+        }
+
+        &-choice_block {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          padding: 24px 0 12px 38px;
+
+          &-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4px;
+
+            &-text {
+              font-weight: 600;
+              margin: 0;
+              flex: 0 0 45%;
+              max-width: 45%;
+
+              &::placeholder {
+                color: $gray-text;
+              }
+            }
+
+            &-value {
+              border: none;
+              outline: none;
+              flex: 0 0 45%;
+              max-width: 45%;
+              padding: 6px 16px;
+
+              &.-editable_fields {
+                max-width: 188px;
+              }
+
+              &::placeholder {
+                color: $gray-text;
+              }
+
+              &:disabled {
+                background: none;
+              }
+            }
+
+            &-delete {
+              flex: 0 0 10%;
+              max-width: 10%;
+              display: flex;
+              align-items: center;
+              justify-content: flex-end;
+            }
+          }
+        }
+      }
+    }
+  }
+}

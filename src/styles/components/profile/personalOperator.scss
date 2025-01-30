@@ -1,0 +1,1433 @@
+.personal_operator {
+  margin: 0 -10px;
+  display: grid;
+  grid-template-columns: [start] auto [breakpoint] auto [end];
+  grid-template-rows: [start] auto [breakpoint] auto [breakpoint] auto [end];
+  grid-auto-flow: column;
+
+  &.-main {
+    grid-template-columns: [start] 39% [breakpoint] 31% [breakpoint] 30% [end];
+  }
+
+  &-block {
+    margin: 0 10px;
+
+    &.-main {
+      grid-area: start / start / breakpoint 1 / breakpoint 1;
+    }
+
+    &.-additional {
+      grid-area: start / breakpoint 1 / breakpoint 1 / breakpoint 2;
+    }
+
+    &.-fullscreen {
+      grid-area: start / start / end / end;
+    }
+
+    &.-profit {
+      grid-area: start / breakpoint 2 / breakpoint 1 / end;
+    }
+  }
+
+  &-card {
+    &-header {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+
+      &-title {
+        width: 253px;
+
+        h3 {
+          height: 32px;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+
+    &-body-row {
+      flex-direction: row;
+      align-items: flex-start;
+      height: 24px;
+      margin-bottom: 16px;
+
+      &-value {
+
+        .input-tel__input {
+          color: $gray-700 !important;
+        }
+
+        max-width: 100%;
+
+        input {
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &.-survey {
+      max-width: 560px;
+    }
+  }
+
+  &-card {
+    margin-bottom: 20px;
+
+    &-header {
+      padding: 24px 24px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid $border-color;
+
+      &-week_profit {
+        overflow: hidden;
+        display: inline-flex;
+        align-items: center;
+        white-space: nowrap;
+
+        h4 {
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+      }
+
+      &-date {
+        display: flex;
+      }
+
+      &-edit {
+        color: $link-color;
+        fill: $link-color;
+        font-size: 13px;
+        cursor: pointer;
+        margin-block: auto;
+
+        span {
+          margin-right: 8px;
+        }
+      }
+
+      &-title {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+
+        &-badge {
+          padding: 3px 11px 2px;
+          font-size: 10px;
+          border-radius: 22px;
+          line-height: 16px;
+          font-weight: 500;
+          color: white;
+          background-color: $primary;
+
+          &.-secondary {
+            background-color: $gray-200;
+            color: $gray-text;
+          }
+        }
+      }
+
+      &.-schedule {
+        padding: 24px 24px 16px;
+
+        h4 {
+          margin-block: auto;
+        }
+      }
+
+      h3 {
+        line-height: 32px;
+        margin-bottom: 0;
+      }
+
+      &-schedule_picker {
+        &-title {
+          margin-bottom: 4px;
+        }
+
+        &-profit {
+          display: flex;
+
+          p {
+            font-weight: 400;
+            margin: 0 4px 0 0;
+            font-size: 13px;
+            user-select: none;
+          }
+
+          &-arrow {
+            cursor: pointer;
+          }
+        }
+
+        &-picker {
+          display: flex;
+
+          p {
+            margin: 0;
+            margin-right: 4px;
+            font-size: 11px;
+            user-select: none;
+          }
+
+          &-arrow {
+            cursor: pointer;
+          }
+        }
+      }
+
+      &-date_picker {
+        .workshifts-edit-main-datepicker {
+          &-border {
+            display: none;
+          }
+
+          &-current {
+            width: 160px;
+
+            &-icon {
+              display: none;
+            }
+          }
+
+          &-prev, &-next {
+            font-size: 17px;
+            color: $text-color;
+          }
+        }
+      }
+    }
+
+    &-body {
+      padding: 16px 24px 24px;
+
+      &.-fixed {
+        max-height: 224px;
+        overflow: auto;
+      }
+
+      &.-fixed_large {
+        max-height: 345px;
+        overflow: auto;
+      }
+
+      &.-paddingless {
+        padding: 0;
+      }
+
+      &.-duties {
+        max-height: 186px;
+        overflow: auto;
+      }
+
+      &.-empty {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &-report {
+        position: relative;
+        padding: 12px 56px 12px 24px;
+        border-bottom: 1px solid $border-color;
+        cursor: pointer;
+
+        &-main {
+          max-width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: flex;
+          align-items: center;
+        }
+
+        &-icon {
+          position: absolute;
+          right: 34px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+
+      &-row {
+        max-width: 408px;
+        display: flex;
+        align-items: center;
+        height: 32px;
+        margin-bottom: 16px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &-title {
+          flex: 0 0 32%;
+          max-width: 32%;
+          text-align: left;
+          margin-right: 8px;
+
+          &-icon {
+            margin-left: 9px;
+          }
+
+          &.-more {
+            flex: 0 0 40%;
+            max-width: 40%;
+          }
+
+          &.-email {
+            padding-top: 6px;
+          }
+        }
+
+        &-value {
+          flex: 0 0 62%;
+          max-width: 62%;
+          text-align: left;
+
+          &-email {
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 20px;
+            margin-left: 12px;
+          }
+
+          &-input {
+            width: 100%;
+            padding: 6px 16px;
+            margin-left: -8px;
+            border: none;
+            outline: none;
+
+            &:disabled {
+              background: none;
+            }
+          }
+
+          &-select {
+            width: 100%;
+
+            .custom_select {
+              &.-alt .custom_select-dropdown {
+                .dropdown {
+                  &-toggle {
+                    padding: 6px 46px 6px 16px;
+                  }
+                }
+              }
+            }
+          }
+
+          &-date {
+            width: 100%;
+            padding: 6px 16px;
+
+            .mx {
+              &-input-wrapper, &-datepicker {
+                width: 100%;
+              }
+            }
+          }
+
+          &-icon {
+            width: 16px;
+            height: 16px;
+            border-radius: 16px;
+            color: var(--gray-text-dark);
+          }
+
+          &-group {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%
+          }
+
+          .mx {
+            &-input-wrapper, &-datepicker {
+              width: 100%;
+            }
+          }
+
+          &-shifts_numbers {
+            width: 190px;
+            padding: 8px 8px 0;
+            font-size: $font-size-base + px;
+
+            &-status {
+              padding: 2px 8px;
+              border-radius: 22px;
+              font-size: 11px;
+              white-space: nowrap;
+
+              &.-created {
+                background-color: rgba(26, 134, 208, 0.1);
+                color: $cyan;
+              }
+
+              &.-assigned {
+                background-color: rgba(253, 167, 0, 0.1);
+                color: $yellow;
+              }
+
+              &.-canceled {
+                background-color: rgba(253, 95, 0, 0.1);
+                color: $red;
+              }
+
+              &.-process {
+                background: rgba(33, 174, 140, 0.2);
+                color: $teal;
+              }
+
+              &.-completed {
+                background-color: rgba(233, 236, 239, 0.2);
+                color: $gray-text;
+              }
+            }
+          }
+
+          .iti-flag-small {
+            border-radius: 50%;
+            height: 16px;
+            width: 16px;
+          }
+        }
+
+        p {
+          flex: 0 0 35%;
+          max-width: 35%;
+          margin: 0;
+        }
+      }
+
+      &-tooltip {
+        .tooltip-inner {
+          min-width: 404px !important;
+          max-width: 404px;
+          padding: 8px 24px;
+          max-height: 260px;
+          overflow: auto;
+          font-size: 13px;
+        }
+
+        &-body {
+          width: 100%;
+          padding: 14px 0;
+          border-bottom: 1px solid $text-color;
+
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+
+      &-comment {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 16px;
+        max-height: 250px;
+        overflow: auto;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &-avatar {
+          margin-right: 12px;
+          flex-grow: 0;
+          flex-shrink: 0;
+        }
+
+        &-main {
+          flex: 0 0 calc(100% - 36px);
+          max-width: calc(100% - 36px);
+
+          p {
+            margin-bottom: 0;
+          }
+
+          &-description {
+            font-size: 13px;
+            font-weight: normal;
+            margin: 0;
+            padding: 4px 0;
+          }
+
+          &-time {
+            color: $gray-text;
+            font-size: 13px;
+            font-weight: normal;
+          }
+        }
+      }
+
+      &-office {
+        padding: 12px 24px;
+        width: 280px;
+
+        &.-error_text {
+          color: #FD5F00;
+        }
+      }
+
+      &-profit {
+
+        &.-fixed {
+          max-height: 290px;
+          overflow: auto;
+        }
+
+        &-container {
+          min-width: 500px;
+        }
+
+        &-tooltip {
+          display: flex;
+          align-items: center;
+          padding: 4px 16px;
+        }
+
+        &-title {
+          font-weight: 600;
+          padding: 16px 24px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border-bottom: 1px solid $border-color;
+          background: $body-bg;
+
+          &-columns {
+            font-size: 12px;
+            line-height: 16px;
+          }
+
+          &-procent_icon {
+            margin-right: 127px;
+            font-size: 12px;
+            line-height: 16px;
+          }
+
+          &-arrow {
+            display: inline-flex !important;
+            align-items: center;
+            margin-left: 8px;
+            transition: .2s;
+            cursor: pointer;
+
+            &.-active {
+              transform: rotate(180deg);
+            }
+          }
+        }
+
+        &-row {
+          font-weight: 400;
+          display: flex;
+          padding: 12px 24px;
+          align-items: center;
+          align-self: stretch;
+          justify-content: space-between;
+
+          &:not(:last-child) {
+            border-bottom: 1px solid $border-color;
+          }
+
+          &-avatar {
+            margin-right: 8px;
+          }
+
+          &-info {
+            display: inline-flex;
+            max-width: 275px;
+          }
+
+          &-fullname {
+            max-width: 160px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin: auto 4px auto 0;
+          }
+
+          &-resign_icon {
+            margin: auto;
+          }
+
+          &-ref {
+            width: 133px;
+
+            .tooltip-inner {
+              padding: 50px;
+            }
+          }
+
+          &-procent {
+            width: 45px;
+          }
+
+          &-model_profit {
+            text-overflow: ellipsis;
+            width: 68px;
+            white-space: nowrap;
+            overflow: hidden;
+          }
+        }
+
+      }
+
+      &-schedule {
+
+        &-model_icon {
+          width: 57px;
+          height: 57px;
+          color: $gray-text;
+          margin-block: 36px 2px;
+        }
+
+        &-exclamation_icon {
+          display: none;
+        }
+
+        &.-fixed {
+          max-height: 318px;
+          max-width: 100%;
+        }
+
+        &-container {
+          min-width: 500px;
+        }
+
+        &-tooltip {
+          display: flex;
+          align-items: center;
+          padding: 4px 16px;
+
+          &-flag {
+            margin-right: 4px;
+          }
+
+          &-info {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            text-align: left;
+          }
+        }
+
+        &-header {
+          display: flex;
+          width: 100%;
+          background: var(--bg-color);
+          font-size: 11px;
+          padding: 16px 24px;
+          font-weight: 600;
+          line-height: 16px;
+
+          &-number {
+            flex: 0 0 15%;
+            text-align: left;
+            margin-left: 1%;
+          }
+
+          &-day {
+            flex: 0 0 61px;
+            text-align: left;
+          }
+
+          &-lattice {
+            flex: 0 0 12.948%;
+            white-space: nowrap;
+          }
+
+          &-from {
+            flex: 0 0 18.457%;
+            white-space: nowrap;
+          }
+
+          &-to {
+            flex: 0 0 17.08%;
+            text-align: left;
+            white-space: nowrap;
+
+          }
+
+          &-status {
+            flex: 0 0 21.212%;
+            text-align: left;
+            white-space: nowrap;
+          }
+
+          &-profit {
+            flex: 0 0 21.9%;
+            text-align: left;
+            white-space: nowrap;
+            margin-right: auto;
+          }
+        }
+
+        &-without_workshifts {
+          padding-left: 24px;
+          margin-block: 12px;
+          display: inline-flex;
+          width: 100%;
+          align-items: center;
+
+          &-text {
+            line-height: 20px;
+            font-weight: 500;
+            font-size: 15px;
+            color: $gray-text;
+          }
+
+          &.-last_saturday {
+            .personal_operator-card-body-schedule-exclamation_icon {
+              display: block;
+            }
+          }
+        }
+
+        &-days {
+          &-day {
+            display: flex;
+
+            &-title {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex: 0 0 10%;
+              max-width: 10%;
+              border-top: 1px solid var(--border-color-light);
+              border-right: 1px solid var(--border-color-light);
+              text-transform: capitalize;
+            }
+
+            &-period_field {
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+
+              &-period {
+                width: 100%;
+
+                &-work_shifts {
+                  display: flex;
+
+                  &-work_shift {
+                    display: flex;
+                    padding: 12px 16px;
+                    border-top: 1px solid var(--border-color-light);
+
+                    &:first-child {
+                      border-top: none;
+                    }
+
+                    &:last-child {
+                      border-bottom: 1px solid $border-color;
+                    }
+
+                    &.-not_paid {
+                      background: $danger-light;
+
+                      .personal_operator-card-body-schedule-days-day-period_field-period-work_shifts-work_shift-shift-info-icon {
+                        color: $orange-alt;
+                      }
+                    }
+
+                    &-shift {
+                      height: 20px;
+                      width: 100%;
+                      display: flex;
+                      justify-content: space-between;
+
+                      &-number {
+                        flex: 0 0 15%;
+                        max-width: 15%;
+                        text-align: left;
+                        margin-left: 1%;
+                        font-weight: 400;
+                        color: $gray-700;
+                      }
+
+                      &-model {
+                        flex: 0 0 31%;
+                        max-width: 31%;
+                        margin-right: 3.4%;
+                        font-weight: 400;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                      }
+
+                      &-from {
+                        flex: 0 0 10.5%;
+                        max-width: 10.5%;
+                        margin-right: 3.4%;
+                        font-size: 13px;
+                        font-weight: 400;
+                        color: $gray-700;
+                      }
+
+                      &-to {
+                        flex: 0 0 10.5%;
+                        max-width: 10.5%;
+                        margin-right: 3.4%;
+                        font-weight: 400;
+                        color: $gray-700;
+                      }
+
+                      &-profit {
+                        display: flex;
+                        flex: 0 0 18%;
+                        max-width: 18%;
+
+                        span {
+                          font-weight: 400;
+                          color: $gray-700;
+                          line-height: 20px;
+                          margin-left: auto;
+                        }
+                      }
+
+                      &-status_container {
+                        max-width: 12%;
+                        flex: 0 0 12%;
+                        margin-right: 3.4%;
+
+                        &-status {
+                          height: 20px;
+                          font-weight: 500;
+                          font-size: 10px;
+                          padding: 2px 8px;
+                          text-align: center;
+                          border-radius: 22px;
+                          white-space: nowrap;
+                          width: 100%;
+
+                          &.-created {
+                            background: rgba(26, 134, 208, 0.1);
+                            color: $cyan;
+                          }
+
+                          &.-assigned {
+                            background: $warning-light;
+                            color: $warning;
+                          }
+
+                          &.-canceled {
+                            background: rgba(253, 95, 0, 0.1);
+                            color: $danger;
+                          }
+
+                          &.-process {
+                            background: linear-gradient(0deg, rgba(33, 174, 140, 0.1), rgba(33, 174, 140, 0.1)), #FFFFFF;
+                            color: $success;
+                          }
+
+                          &.-completed {
+                            background: $body-bg;
+                            color: $gray-text;
+                          }
+                        }
+                      }
+
+                      &-info {
+                        text-align: right;
+                        min-width: 20px;
+
+                        &-icon {
+                          color: $success;
+                        }
+                      }
+
+                      &.-model_line {
+
+                        .personal_operator-card-body-schedule-days-day-period_field-period-work_shifts-work_shift-shift {
+
+                          &-model {
+                            flex: 0 0 19%;
+                            max-width: 19%;
+                            margin-right: 2%;
+                          }
+
+                          &-from {
+                            flex: 0 0 29%;
+                            max-width: 29%;
+                            margin-right: 2%;
+                          }
+
+                          &-to {
+                            flex: 0 0 26.5%;
+                            max-width: 26.5%;
+                            margin-right: 2%;
+                          }
+
+                          &-status_container {
+                            max-width: 20%;
+                            flex: 0 0 20%;
+
+                            &-status {
+                              width: 100%;
+                              max-width: 78px;
+                              min-width: 50px;
+                              margin-left: auto;
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &-empty {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 34px 0 40px;
+
+
+        &-title {
+          font-weight: 600;
+          margin: 8px;
+        }
+
+        &-subtitle {
+          font-size: 11px;
+          margin: 0;
+        }
+      }
+
+      &-list {
+        margin-bottom: 8px;
+
+        &-title {
+          margin-bottom: 4px;
+        }
+
+        ul {
+          margin-bottom: 0;
+        }
+      }
+
+      &-empty_duties {
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &.-loading {
+          flex-direction: column;
+
+          .throbber {
+            margin-bottom: 16px;
+          }
+        }
+
+        b {
+          text-align: center;
+        }
+      }
+    }
+
+    &-schedule_mobile {
+      &-day {
+        &-trigger {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border-bottom: 1px solid $border-color;
+          padding: 12px 16px 12px 24px;
+
+          &-main {
+            &-angle {
+              transition: .1s;
+              margin-right: 6px;
+
+              &.-active {
+                transform: rotate(90deg);
+              }
+            }
+
+            &-title {
+              margin-right: 16px;
+              text-transform: uppercase;
+            }
+
+            span {
+              font-weight: 400;
+            }
+          }
+
+          &-sum {
+            display: flex;
+            align-items: center;
+            font-weight: 400;
+
+            &-icon {
+              color: $success;
+
+              &.-unpaid {
+                color: $orange-alt;
+              }
+            }
+          }
+        }
+
+        &-collapse {
+          border-bottom: 1px solid $border-color;
+
+          &-shift {
+            padding: 0 20px 10px 20px;
+
+            &:first-child {
+              padding-top: 10px;
+            }
+
+            &:last-child {
+              padding-bottom: 0;
+            }
+
+            &-container {
+              border-bottom: 1px solid $border-color;
+            }
+
+            &:last-child &-container {
+              border-bottom: none;
+            }
+
+            &-row {
+              display: flex;
+
+              &-title {
+                font-weight: 600;
+                text-transform: uppercase;
+                font-size: 11px;
+                line-height: 16px;
+                margin-bottom: 10px;
+                flex: 0 0 49%;
+                max-width: 49%;
+              }
+
+              &-value {
+                flex: 0 0 51%;
+                max-width: 51%;
+                font-weight: 400;
+              }
+            }
+
+            &-add_payment {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: $success;
+              margin-bottom: 12px;
+
+              &-icon {
+                height: 20px;
+                flex: 0 0 20px;
+                max-width: 20px;
+                border-radius: 50%;
+                background-color: #E9F7F4;
+                position: relative;
+                margin-left: 8px;
+
+                svg {
+                  position: absolute;
+                  left: 50%;
+                  top: 50%;
+                  transform: translate(-50%, -50%);
+                }
+              }
+
+              &.-unpaid {
+                color: $orange-alt;
+              }
+
+              &.-unpaid &-icon {
+                background-color: rgba(253, 95, 0, 0.2);
+              }
+            }
+          }
+        }
+      }
+
+      &.-empty {
+        padding: 12px 24px;
+        color: $gray-text;
+      }
+    }
+
+    &-payment {
+      display: flex;
+      justify-content: space-between;
+      height: 60px;
+      padding: 16px 24px 24px;
+
+      &-cell {
+        border-radius: 10px;
+        background: rgba(26, 134, 208, 0.10);
+        padding: 2px 8px;
+        font-size: 11px;
+        width: 74px;
+        white-space: nowrap;
+        height: 20px;
+        color: $cyan;
+        font-weight: 500;
+      }
+
+      &-form {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -8px;
+
+        &-block {
+          padding: 0 8px;
+          margin-bottom: 12px;
+
+          &.-card_number {
+            flex: 0 0 65%;
+            max-width: 65%;
+          }
+
+          &.-expires_at {
+            flex: 0 0 35%;
+            max-width: 35%;
+          }
+
+          &.-card_holder {
+            flex: 0 0 100%;
+            max-width: 100%;
+          }
+
+          &-title {
+            color: $gray-text;
+            margin-bottom: 0;
+          }
+
+          &-input {
+            padding: 4px 8px;
+            background-color: $gray-200;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .hidden_data {
+              &.-card_number, &.-card_expires_at {
+                flex: 1 1 100%;
+                max-width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &-groups {
+      &-group {
+        position: relative;
+        padding: 20px;
+        border-bottom: 1px solid var(--border-color-light);
+
+        &:last-child {
+          border-bottom: 0;
+        }
+
+        &-main {
+          position: absolute;
+          right: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+          background-color: rgba(26, 134, 208, 0.1);
+          padding: 2px 8px;
+          border-radius: 22px;
+          color: $info;
+          font-size: 10px;
+        }
+
+        &-delete {
+          &.glyphicon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    &-footer {
+      padding: 16px 20px;
+      border-top: 1px solid var(--border-color-light);
+
+      &-job-duties {
+        display: flex;
+        justify-content: space-between;
+        box-shadow: 0px -8px 24px rgba(0, 0, 0, 0.04);
+      }
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    grid-template-columns: [start] auto [breakpoint] auto [breakpoint] auto [end];
+    grid-template-rows: [start] auto [breakpoint] auto [breakpoint] auto [end];
+    grid-auto-flow: column;
+
+    &.-main {
+      grid-template-columns: [start] auto [breakpoint] auto [breakpoint] auto [end];
+      grid-auto-flow: column;
+    }
+
+    &-card {
+      &.-survey {
+        max-width: 100%;
+      }
+    }
+
+    .personal_operator-card-body-schedule-days-day-period_field-period-work_shifts-work_shift {
+      &-shift {
+        &-model {
+          flex: 0 0 29.6%;
+          max-width: 29.6%;
+        }
+
+        &-from {
+          flex: 0 0 9.9%;
+          max-width: 9.9%;
+        }
+
+        &-to {
+          flex: 0 0 9.9%;
+          max-width: 9.9%;
+        }
+
+        &-profit {
+          flex: 0 0 19%;
+          max-width: 19%;
+
+          span {
+            font-weight: 400;
+            color: $gray-700;
+            line-height: 20px;
+            margin-left: auto;
+          }
+        }
+
+        &-status_container {
+          flex: 0 0 9.6%;
+          max-width: 9.6%;
+
+
+          &-status {
+            font-size: 10px;
+            padding: 2px 8px;
+            border-radius: 22px;
+            white-space: nowrap;
+            overflow: hidden;
+            width: fit-content;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+    }
+
+
+    &-block {
+      &.-schedule {
+        grid-area: middle / middle / middle / end;
+      }
+
+      &.-main {
+        grid-area: breakpoint 2 / start / breakpoint 2 / end;
+      }
+
+      &.-additional {
+        grid-area: breakpoint 4 / start / breakpoint 4 / end;
+      }
+
+      &.-profit {
+        grid-area: breakpoint 3 / start / breakpoint 3 / end;
+      }
+    }
+  }
+
+  &-tooltip_profit {
+    padding: 4px 8px;
+    font-weight: 400;
+    line-height: 20px;
+    font-size: 13px;
+  }
+
+  @media (max-width: 767px) {
+    grid-template-columns: [start] 100% [end];
+    grid-template-rows: [start] auto [breakpoint] auto [breakpoint] auto [end];
+
+    &-block {
+      &.-schedule {
+        grid-area: breakpoint 1 / start / breakpoint 1 / end;
+      }
+
+      &.-main {
+        grid-area: breakpoint 2 / start / breakpoint 2 / end;
+      }
+
+      &.-additional {
+        grid-area: breakpoint 3 / start / end / end;
+      }
+
+      &.-duties {
+        grid-area: start / start / breakpoint 1 / end;
+      }
+    }
+
+
+    .personal_operator-card-header {
+      display: inline-flex;
+      flex-direction: column;
+
+      &-title {
+        padding-bottom: 10px;
+      }
+
+      span.payment_info-text-blue {
+        margin-right: 14px;
+      }
+    }
+
+    .personal_operator-card-header-title {
+      width: 253px;
+      padding-bottom: 10px;
+
+      h3 {
+        height: 32px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+
+    .personal_operator-card-body-row {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      height: 48px;
+      margin-bottom: 24px;
+
+      &-title {
+        max-width: 100%;
+      }
+
+      &-value {
+        margin-top: 4px;
+        width: 100%;
+        max-width: 100%;
+
+        input {
+          padding: 6px 0 6px 8px;
+        }
+
+        span {
+          margin: 6px 0;
+          text-indent: 0;
+          font-weight: 400;
+          color: $gray-700;
+        }
+
+        .input-country-selector {
+          margin-left: -10px !important;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(xl) {
+    row-gap: 24px;
+
+    &.-main {
+      grid-template-columns: [start] auto [breakpoint] auto [end];
+    }
+
+    &-block {
+      &.-main {
+        grid-area: start / start / breakpoint 1 / breakpoint 1;
+      }
+
+      &.-additional {
+        grid-area: start / breakpoint 1 / breakpoint 1 / breakpoint 1;
+      }
+
+      &.-profit {
+        grid-area: breakpoint 1 / breakpoint 1 / breakpoint 1 / end;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+
+    &-block {
+      &.-operator_schedule {
+        margin-bottom: 60px;
+      }
+    }
+
+    .personal_operator-card-body-schedule-without_workshifts {
+
+      &.-last_saturday {
+
+        .personal_operator-card-body-schedule {
+
+          &-model_icon {
+            margin-bottom: -15px;
+          }
+
+          &-exclamation_icon {
+            display: block;
+            position: relative;
+            bottom: 33px;
+            left: 19px;
+          }
+        }
+      }
+
+      padding-left: 0;
+
+      &-text {
+        width: 200px;
+        height: 40px;
+        text-align: center;
+
+        &.-empty {
+          font-weight: 400;
+          font-size: 13px;
+        }
+      }
+
+      &-button {
+        margin-block: 10px 40px;
+        padding: 8px 63px;
+      }
+    }
+
+    .personal_operator-card-header-date {
+      margin-inline: auto;
+    }
+  }
+
+}
+

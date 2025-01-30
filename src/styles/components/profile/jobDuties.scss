@@ -1,0 +1,23 @@
+.job-duties{
+  &-body {
+    padding: 24px;
+
+    &-list {
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 16px;
+
+      &-header {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        font-style: normal;
+        font-weight: normal;
+        margin: 0 0 16px 0;
+      }
+
+      .abc-checkbox label {
+        max-width: 90%;
+      }
+    }
+  }
+}

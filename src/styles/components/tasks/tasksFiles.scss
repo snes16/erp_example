@@ -1,0 +1,151 @@
+.tasks_files {
+  &-main {
+    &-album {
+      padding-bottom: 16px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--border-color);
+
+      &:last-child {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-bottom: none;
+      }
+
+      &-title {
+        display: flex;
+        align-items: center;
+
+        h4 {
+          margin-bottom: 0;
+          margin-right: 8px;
+        }
+
+        &-success {
+          fill: $success;
+        }
+
+        &-tooltip {
+          .tooltip-inner {
+            padding: 8px 16px;
+          }
+
+          p {
+            margin-bottom: 0;
+          }
+
+          &-list {
+            list-style: disc inside;
+            margin-bottom: 0;
+            padding-left: 0;
+            text-align: left;
+          }
+        }
+      }
+
+      &-files {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -24px;
+        justify-content: center;
+
+        &-file {
+          padding: 0 24px;
+          flex: 0 0 50%;
+          max-width: 50%;
+          min-width: 100px;
+
+          &.-rows-3 {
+            flex: 0 0 33.33333%;
+            max-width: 33.33333%;
+            min-width: 150px;
+          }
+
+          &-title {
+            display: flex;
+            white-space: nowrap;
+            align-items: center;
+            margin-bottom: 8px;
+          }
+
+          &-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 104px;
+
+            .materials-files-field-file-image {
+              margin: 0;
+            }
+          }
+
+          &-throbber {
+            height: 104px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .dropzone {
+            height: 104px;
+            padding: 4px;
+
+            &-custom {
+              &-title {
+                font-size: 11px;
+              }
+            }
+
+            .dz-message {
+              margin: 0;
+            }
+          }
+
+          &-empty {
+            height: 104px;
+            border-radius: 8px;
+            border: 2px solid #e5e5e5;
+            background-color: $body-bg;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            span {
+              font-size: 11px;
+              color: #777;
+            }
+          }
+        }
+      }
+
+      &-additional {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin: 0 -8px;
+
+        .tasks_files-main-album-files-file-image {
+          padding: 0 8px;
+        }
+      }
+    }
+
+    @include media-breakpoint-down(xs) {
+      &-album {
+        &-files {
+          &-file {
+            &.-rows-3 {
+              flex: 0 0 50%;
+              max-width: 50%;
+
+              &:last-child {
+                margin-top: 8px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.modal_title {
+    width: 100% !important;
+    padding: 5px 8px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+            
+    &:hover {
+        border: 1px solid #C1CCD3 !important;
+        border-radius: 7px;
+        padding: 4px 7px;
+    }
+
+    &:focus {
+        border: 1px solid #9DA8AF !important;
+        border-radius: 7px;
+        padding: 4px 7px;
+    }
+
+    @include media-breakpoint-down(xs) {
+        font-size: 17px;
+    }
+}

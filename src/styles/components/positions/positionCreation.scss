@@ -1,0 +1,44 @@
+.position_creation {
+  &-body {
+    &-title {
+      font-size: 20px;
+      font-weight: 600;
+      padding: 24px 24px 0;
+
+      input {
+        width: 100%;
+
+        &::placeholder {
+          font-weight: 600;
+        }
+      }
+    }
+
+    &-subtitle {
+      padding: 16px 24px 0;
+
+      &-container {
+        border-top: 1px solid $border-color;
+        padding-top: 16px;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    &-roles {
+      height: calc(100vh - 274px);
+      overflow: auto;
+
+      &.-details {
+        height: calc(100vh - 324px);
+      }
+
+      &.-empty {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}

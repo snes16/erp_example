@@ -1,0 +1,81 @@
+.show_job_duties {
+  font-family: $font-family-base;
+  background-color: #F9FBFD;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 34px 0;
+
+  &-card {
+    width: 50%;
+    height: 100%;
+
+    &-body {
+      padding: 32px 48px;
+      overflow: auto;
+      height: calc(100% - 56px);
+
+      &-title {
+        line-height: 32px;
+        margin-bottom: 24px;
+      }
+
+      &-list {
+        font-size: 15px;
+        margin-bottom: 8px;
+
+        &-title {
+          margin-bottom: 24px;
+        }
+
+        ul {
+          margin-bottom: 0;
+
+          li {
+            display: flex;
+            margin-bottom: 16px;
+          }
+        }
+
+        &-icon {
+          min-width: 25px;
+        }
+      }
+    }
+    &-button {
+      height: 56px;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .btn {
+        width: 80%;
+      }
+
+      &-disabled {
+          &:disabled {
+            background: #EAF0F6 !important;
+            border-color: #EAF0F6 !important;
+            color: #9DA8AF !important;
+          }
+      }
+    }
+  }
+  @include media-breakpoint-down(xl) {
+    &-card {
+      width: 60%;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    &-card {
+      width: 80%;
+    }
+  }
+
+}

@@ -1,0 +1,20 @@
+.hidden_data {
+  position: relative;
+  flex-grow: 0;
+  flex-shrink: 0;
+  padding-right: 30px;
+
+  &.-card_number {
+    width: 206px;
+  }
+
+  &.-card_expires_at {
+    width: 148px;
+    margin-left: 16px;
+    padding: 4px 8px 4px 16px;
+  }
+
+  &.-wallet_address {
+    width: 206px;
+  }
+}

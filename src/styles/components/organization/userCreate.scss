@@ -1,0 +1,132 @@
+.user_create {
+  &-header {
+    padding: 12px 24px;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  &-subheader {
+    padding: 8px 24px;
+    border-bottom: 1px solid var(--border-color);
+
+    &-back {
+      color: var(--primary);
+      cursor: pointer;
+    }
+  }
+
+  &-body {
+    padding: 0 24px;
+
+    &-main {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+
+      &-avatar {
+        flex: 0 0 54px;
+        max-width: 54px;
+        margin-right: 16px;
+        height: 54px;
+      }
+
+      &-info {
+        flex: 0 0 calc(100% - 70px);
+        flex-direction: column;
+
+        &-name {
+          text-transform: capitalize;
+          flex-shrink: 0;
+          color: $gray-700;
+        }
+        &-fullname {
+          text-transform: capitalize;
+          padding: 0;
+          flex-shrink: 0;
+          margin-right: 4px;
+          color: $gray-700;
+        }
+      }
+    }
+
+    &-additional {
+      padding: 24px 0;
+
+      &-field {
+        margin-bottom: 24px;
+      }
+
+      .form-control {
+        height: auto;
+      }
+    }
+
+    &-duplicate {
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border-radius: 7px;
+      box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06);
+      border: 1px solid #EAF0F6;
+      margin: 24px 0;
+      padding: 24px;
+
+
+      &-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+        border-bottom: 1px solid var(--border-color);
+
+        &-text {
+          font-size: 17px;
+          font-weight: 600;
+          color: #495057;
+          margin: 0;
+        }
+        &-close {
+          margin: 0;
+        }
+      }
+      &-user {
+        padding: 4px 0;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+
+        & .avatar {
+          max-width: 48px;
+          width: 48px;
+          height: 48px;
+        }
+
+        &-item {
+          display: flex;
+          flex-direction: column;
+          text-align: left;
+        }
+      }
+
+      &-buttons {
+        margin-top: 16px;
+        padding-top: 16px;
+        display: flex;
+        justify-content: flex-end;
+        border-top: 1px solid var(--border-color);
+      }
+    }
+
+    &-collapse {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border-color);
+
+      &-title {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+}

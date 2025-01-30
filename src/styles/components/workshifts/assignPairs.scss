@@ -1,0 +1,137 @@
+.assign-pairs {
+  &-header {
+    display: flex;
+    height: 46px;
+    padding: 10px 56px 10px 24px;
+    border-bottom: 1px solid var(--border-color);
+  }
+  &-subheader {
+    padding: 7px 24px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+
+    &-link {
+      color: $primary;
+      cursor: pointer;
+
+      i {
+        margin-right: 8px;
+      }
+    }
+  }
+  &-body {
+    &-title {
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h3 {
+        margin: 0;
+      }
+      &-edit {
+        color: $link-color;
+        fill: $link-color;
+        font-size: 13px;
+        cursor: pointer;
+
+        span {
+          margin-right: 8px;
+        }
+        svg {
+          width: 16px;
+        }
+      }
+    }
+    &-header {
+      margin: 0 24px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+
+      &-user {
+        font-weight: 600;
+        color: $input-color;
+        width: 44%;
+        margin-bottom: 8px;
+      }
+    }
+    &-list {
+      height: calc(var(--vh, 1vh) * 100 - 320px);
+      overflow: auto;
+      transition: .3s;
+
+      &.-lg {
+        height: calc(var(--vh, 1vh) * 100 - 280px);
+      }
+
+      &.-sm {
+        height: calc(var(--vh, 1vh) * 100 - 390px);
+      }
+
+      &.-opened {
+        height: calc(var(--vh, 1vh) * 100 - 210px);
+        transition: .4s;
+
+        &.-sm {
+          height: calc(var(--vh, 1vh) * 100 - 250px);
+        }
+      }
+
+      &-block{
+        padding: 14px 24px 0;
+
+        &-office {
+          padding: 2px 0;
+          width: 80%;
+        }
+        &-pair {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-bottom: 1px solid var(--border-color);
+          &:last-child {
+            border-bottom: none;
+          }
+          &-user {
+            width: 40%;
+          }
+
+          &-action {
+            width: 52px;
+            display: flex;
+            justify-content: space-between;
+            &-pen{
+              width: 16px;
+              height: 16px;
+              fill: $text-color;
+              cursor: pointer;
+            }
+
+            &-trash{
+              width: 20px;
+              height: 20px;
+              fill: $text-color;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+    &-empty {
+      margin: 0 24px;
+      padding: 40px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-top: 1px solid var(--border-color);
+
+      h4 {
+        margin-bottom: 10px;
+      }
+      span {
+        margin-bottom: 14px;
+      }
+    }
+  }
+}

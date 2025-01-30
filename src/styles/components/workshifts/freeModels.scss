@@ -1,0 +1,572 @@
+.free_models {
+  &-search {
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border-color);
+
+    .input-group-text {
+      padding: 8px 12px;
+    }
+  }
+
+  &-tabs {
+    background-color: $body-bg;
+    padding: 0 12px;
+    display: flex;
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+
+    &.-mobile {
+      display: none;
+    }
+
+    &.-mobile &-tab {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 8px;
+    }
+
+    &-tab {
+      color: $gray-400;
+      cursor: pointer;
+      padding: 16px 12px;
+
+      &.-active {
+        color: $link-color;
+      }
+
+      &-button {
+        .navbar-light &.navbar-toggler {
+          border: none;
+          padding: 0;
+        }
+
+        &-icon {
+          flex: 16px;
+        }
+      }
+    }
+  }
+
+  &-checkbox {
+    margin-right: 24px;
+
+    input {
+      width: 12px !important;
+      height: 12px  !important;
+    }
+
+    label {
+      margin-bottom: 0;
+
+      &:before, &:after {
+        outline: none !important;
+        color: $white !important;
+      }
+    }
+
+    &.-process {
+      @include checkbox-color($teal);
+    }
+
+    &.-canceled {
+      @include checkbox-color($red);
+    }
+
+    &.-assigned {
+      @include checkbox-color($yellow);
+    }
+
+    &.-created {
+      @include checkbox-color($primary-color);
+    }
+
+    &.-completed {
+      @include checkbox-color($gray-400);
+    }
+  }
+
+  &-list {
+    max-width: 100%;
+    overflow: auto;
+
+    &-container {
+      position: relative;
+      min-width: 515px;
+    }
+
+    &-body {
+      //max-height: calc(100vh - 490px);
+      max-height: calc(var(--vh, 1vh) * 100 - 490px);
+    }
+
+    &-row {
+      position: relative;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      padding: 8px 24px;
+      align-items: center;
+      flex-wrap: wrap;
+
+      &.-head {
+        padding: 16px 24px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      &.-head &-cell.-model {
+        flex: 0 0 45%;
+        max-width: 45%;
+      }
+
+      &-head_group {
+        font-weight: bold;
+        text-transform: uppercase;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 16px 24px;
+        border-bottom: 1px solid var(--border-color);
+        background-color: $white;
+      }
+
+      &:nth-child(even) {
+        background-color: var(--bg-color);
+      }
+
+      &-cell {
+        &.-grouping {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+
+        &.-avatar {
+          flex: 0 0 64px;
+          max-width: 64px;
+        }
+
+        &.-model {
+          flex: 0 0 calc(45% - 64px);
+          max-width: calc(45% - 64px);
+          display: flex;
+          align-items: center;
+        }
+
+        &.-phone {
+          flex: 0 0 20%;
+          max-width: 20%;
+        }
+
+        &.-office {
+          flex: 0 0 25%;
+          max-width: 25%;
+        }
+
+        &.-checkbox {
+          display: flex;
+          justify-content: flex-end;
+          flex: 0 0 10%;
+          max-width: 10%;
+        }
+
+        &.-offset {
+          padding-right: 22px;
+        }
+
+        &.-with_grouping {
+          height: 52px;
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+
+        &-bell {
+          cursor: pointer;
+          fill: $text-color;
+          margin-right: 16px;
+
+          &:hover {
+            fill: $primary;
+          }
+        }
+
+        &-information {
+          max-width: calc(100% - 64px);
+          flex: 0 0 calc(100% - 64px);
+
+          &-personal {
+            max-width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: flex;
+            align-items: center;
+          }
+        }
+
+        &-tooltip {
+          &-copy {
+            display: flex;
+            align-items: center;
+
+            &-icon {
+              margin-left: 12px;
+              cursor: pointer;
+              stroke: white;
+            }
+          }
+
+          &-loading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 400px;
+
+            &-throbber {
+              stroke: white;
+              height: 24px;
+              width: 24px;
+            }
+          }
+
+          .tooltip-inner {
+            max-width: 100%;
+            padding: 8px 16px;
+          }
+        }
+      }
+    }
+  }
+
+  &-info {
+    //min-height: calc(100vh - 470px);
+    min-height: calc(var(--vh, 1vh) * 100 - 470px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+
+    &-load {
+      margin-top: 16px;
+    }
+
+    &-empty {
+      margin-top: 8px;
+    }
+
+    &-access_denied {
+      text-align: center;
+      line-height: 32px;
+    }
+  }
+
+  &-card {
+
+    &.card {
+      border: 1px solid $default;
+    }
+
+    &-table {
+      max-width: 100%;
+      overflow: auto;
+
+      &-header {
+        display: flex;
+
+        &-cell {
+          padding: 16px;
+          font-weight: 600;
+          text-transform: uppercase;
+          background-color: $body-bg;
+          border-bottom: 1px solid $default;
+          border-right: 1px solid $default;
+
+          &:last-child {
+            border-right: none;
+          }
+
+          &.-office {
+            flex: 0 0 32px;
+            max-width: 32px;
+            padding: 0;
+          }
+
+          &.-shift {
+            flex: 0 0 calc((100% - 33px) / 8);
+            max-width: calc((100% - 33px) / 8);
+            min-width: 145px;
+          }
+        }
+      }
+
+      &-body {
+        &-row {
+          display: flex;
+
+          &:nth-child(even) &-cell {
+            background-color: $body-bg;
+          }
+
+          &:last-child &-cell {
+            border-bottom: none;
+          }
+
+          &-cell {
+            border-right: 1px solid $default;
+            position: relative;
+
+            &:after {
+              content: '';
+              position: absolute;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              height: 1px;
+              background-color: $default;
+            }
+
+            &:last-child {
+              border-right: none;
+            }
+
+            &.-office {
+              flex: 0 0 32px;
+              max-width: 32px;
+              padding: 8px 0;
+              text-align: center;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              &.-dark {
+                color: white;
+              }
+            }
+
+            &.-shift {
+              flex: 0 0 calc((100% - 33px) / 8);
+              max-width: calc((100% - 33px) / 8);
+              min-width: 145px;
+            }
+
+            &-shift {
+              padding: 8px 16px;
+              position: relative;
+              display: flex;
+              min-height: 35px;
+
+              &.-model {
+                height: 100%;
+                align-items: center;
+              }
+
+              &.-with_wages {
+                min-height: 52px;
+              }
+
+              &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 1px;
+                background-color: $default;
+              }
+
+              span {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+
+              &-status {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                width: 5px;
+                cursor: pointer;
+
+                &.-created {
+                  background-color: $link-color;
+                }
+
+                &.-assigned {
+                  background-color: $yellow;
+                }
+
+                &.-canceled {
+                  background-color: $red;
+                }
+
+                &.-process {
+                  background-color: $teal;
+                }
+
+                &.-completed {
+                  background-color: $gray-text;
+                }
+              }
+
+              &-tooltip {
+                opacity: 1 !important;
+                max-width: 256px;
+
+                .tooltip-inner {
+                  text-align: left;
+                  padding: 8px 16px;
+                }
+
+                p {
+                  text-align: left;
+                  margin-bottom: 8px;
+                  line-height: 20px;
+                  font-size: 13px;
+                  font-weight: 400;
+                  white-space: normal;
+                }
+
+                &-resource_incomes {
+                  margin-top: 8px;
+                  padding-top: 8px;
+                  display: grid;
+                  grid-template-columns: repeat(3, 1fr);
+                  column-gap: 16px;
+                  row-gap: 8px;
+                  border-top: $gray-700 1px solid;
+                  margin-bottom: 8px;
+                }
+
+                &-status {
+                  border-radius: 22px;
+                  padding: 4px 8px;
+                  font-size: 11px;
+                  line-height: 8px;
+                  font-weight: 500;
+
+                  &.-created {
+                    background: rgba(26, 134, 208, 0.2);
+                    color: $cyan;
+                  }
+
+                  &.-assigned {
+                    background: rgba(253, 167, 0, 0.2);
+                    color: $yellow;
+                  }
+
+                  &.-canceled {
+                    background: rgba(253, 95, 0, 0.2);
+                    color: $orange-alt;
+                  }
+
+                  &.-process {
+                    background: rgba(33, 174, 140, 0.2);
+                    color: $teal;
+                  }
+
+                  &.-completed {
+                    background: rgba(207, 216, 221, 0.2);
+                    color: $gray-alt;
+                  }
+                }
+              }
+
+              &-solo {
+                background: rgba(26, 134, 208, 0.1);
+                border-radius: 22px;
+                color: $link-color;
+                padding: 2px 8px;
+                font-size: 10px;
+                max-height: 19px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-past_workshifts {
+    &-without_shifts {
+      display: flex;
+      min-height: 325px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    &-pin_modal {
+      max-width: 380px!important;
+
+      .modal {
+        &-header {
+          border-bottom: none;
+        }
+
+        &-body {
+          padding: 0;
+          background-color: white;
+
+          .pin-input {
+            background: none;
+            padding-top: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &-tabs {
+      display: none;
+
+      &.-mobile {
+        display: block;
+      }
+    }
+
+    &-list {
+      &-row {
+        display: grid;
+        grid-template-rows: [start] auto [breakpoint] auto [breakpoint] auto [end];
+        grid-template-columns: [start] 64px [middlestart] auto [middleend] 24px [end];
+
+        &.-head {
+          display: none;
+        }
+
+        &-cell {
+          &.-model, &.-phone, &.-office {
+            max-width: none;
+            flex: none;
+          }
+
+          &.-avatar {
+            grid-area: start / start / end / middlestart;
+          }
+
+          &.-model {
+            grid-area: start / middlestart / breakpoint 1 / middleend;
+          }
+
+          &.-phone {
+            grid-area: breakpoint 1 / middlestart / breakpoint 2 / middleend;
+          }
+
+          &.-office {
+            grid-area: breakpoint 2 / middlestart / end / middleend;
+          }
+
+          &.-checkbox {
+            grid-area: start / middleend / end / end;
+          }
+        }
+      }
+    }
+  }
+}

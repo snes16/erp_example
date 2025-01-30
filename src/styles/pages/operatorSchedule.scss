@@ -1,0 +1,133 @@
+.workshifts {
+  &-operators_table {
+    border:  1px solid $default !important;
+
+    &-nickname_icon {
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+
+    &-week {
+      overflow: auto;
+
+      &-collapse {
+        background: $white;
+        border: 1px solid $default;
+
+        &-row {
+          max-width: 165px !important;
+          width: 165px;
+          position: sticky;
+          left: 0;
+          right: 0;
+          z-index: 1;
+          padding: 8px 16px;
+          background-color: $white;
+          border-left: 1px solid $default;
+
+          &-text {
+            color: $gray-700;
+            font-weight: 600;
+            font-size: 11px;
+            line-height: 16px;
+          }
+        }
+      }
+    }
+
+    &-day {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid $default;
+
+      &.-head {
+        background-color: $body-bg;
+        font-weight: 600;
+        text-transform: uppercase;
+        border-radius: 7px;
+      }
+
+      &.-head &-shifts-shift {
+        border-left-color: transparent;
+      }
+
+      &-title {
+        flex: 0 0 52px;
+        max-width: 52px;
+        font-weight: 600;
+        text-align: center;
+        height: 100%;
+      }
+
+      &-shifts {
+        flex: 1 1 100%;
+        max-width: 100%;
+        line-height: 20px;
+
+        &-shift {
+          display: flex;
+          align-items: center;
+          border-left: 1px solid $default;
+          border-bottom: 1px solid $default;
+          height: 44px;
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          &-absence {
+            display: flex;
+            align-items: center;
+            padding: 4px 16px;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 16px;
+          }
+
+          &-block {
+            padding: 12px 16px;
+
+            &.-nickname {
+              flex: 0 0 20%;
+              max-width: 20%;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+
+            &.-model {
+              flex: 0 0 35%;
+              max-width: 35%;
+            }
+
+            &.-uid {
+              flex: 0 0 15%;
+              max-width: 15%;
+            }
+
+            &.-from {
+              flex: 0 0 100px;
+              max-width: 100px;
+            }
+
+            &.-to {
+              flex: 1 1 100%;
+              max-width: 100%;
+            }
+
+            &.-status {
+              flex: 0 0 130px;
+              max-width: 130px;
+              display: flex;
+              justify-content: flex-end;
+            }
+
+            &.-comment {
+              flex: 0 0 50px;
+              max-width: 50px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

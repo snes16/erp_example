@@ -1,0 +1,40 @@
+.cool-lightbox-toolbar__btn, .cool-lightbox-button__icon {
+  background: none !important;
+}
+.cool-lightbox-button:focus, .cool-lightbox-toolbar__btn:focus {
+  outline: none;
+}
+.cool-lightbox-caption {
+  background: none;
+  text-align: left;
+  color: $white;
+  top: 0;
+  height: 24px;
+  width: 70%;
+}
+.album{
+  position: fixed;
+  z-index: 105;
+
+  &-download{
+    z-index: 115;
+    display: flex;
+    align-content: center;
+    position: fixed;
+    flex-direction: column;
+    text-align: center;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    color: $white;
+
+    &-btn {
+      margin-top: 10px;
+      width: 102px;
+
+      & a {
+        color: $white !important;
+      }
+    }
+  }
+}

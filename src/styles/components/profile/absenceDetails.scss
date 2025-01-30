@@ -1,0 +1,83 @@
+.event-details {
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    border-bottom: 1px solid var(--border-color);
+    min-height: 51px;
+
+    &-trash {
+      cursor: pointer;
+      margin-right: 25px;
+      fill: $text-color;
+
+      &:hover {
+        fill: $red;
+      }
+    }
+  }
+
+  &-body {
+    padding: 24px;
+
+    &-title {
+      margin-bottom: 22px;
+    }
+
+    &-block {
+      display: flex;
+      margin-bottom: 28px;
+
+      &-label {
+        flex: 0 0 224px;
+        max-width: 224px;
+        padding-right: 24px;
+      }
+
+      &-date {
+        flex: 0 0 calc(100% - 224px);
+        max-width: calc(100% - 224px);
+        display: flex;
+        align-items: center;
+
+        .input-plain {
+          color: $text-color;
+        }
+
+        &-icon {
+          width: 16px;
+          height: 16px;
+          border-radius: 16px;
+          margin-right: 7px;
+          color: var(--gray-text);
+        }
+
+        &.-error &-input {
+          color: var(--red);
+
+          &::placeholder {
+            color: var(--red);
+          }
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    &-body {
+      &-block {
+        &-label {
+          flex: 0 0 124px;
+          max-width: 124px;
+        }
+
+        &-date {
+          flex: 0 0 calc(100% - 124px);
+          max-width: calc(100% - 124px);
+        }
+      }
+    }
+  }
+}

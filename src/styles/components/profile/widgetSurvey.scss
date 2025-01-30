@@ -1,0 +1,49 @@
+.widget_survey {
+  &-header {
+
+  }
+  &-body {
+    &-field {
+      &-range {
+        display: flex;
+        align-items: center;
+        margin: 0 18px 0 0;
+
+        &-input, &-slider {
+          padding: 0 16px;
+        }
+
+        &-input {
+          flex: 0 0 92px;
+          max-width: 92px;
+        }
+
+        &-slider {
+          position: relative;
+          padding-bottom: 12px;
+
+          &-min, &-max {
+            position: absolute;
+            bottom: 0;
+            color: $gray-text;
+            font-size: 10px;
+          }
+
+          &-min {
+            left: 16px;
+          }
+
+          &-max {
+            right: 16px;
+          }
+        }
+      }
+    }
+
+    &-btn {
+      display: block !important;
+      padding: 8px 44px !important;
+      margin-left: auto;
+    }
+  }
+}

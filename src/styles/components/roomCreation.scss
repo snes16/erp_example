@@ -1,0 +1,72 @@
+.room_creation {
+  &-header {
+    height: 48px;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  &-body {
+    padding: 24px;
+
+    &-main {
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    &-accounts {
+      padding-top: 20px;
+
+      &-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 8px;
+
+        &-add {
+          display: flex;
+          align-items: center;
+          color: var(--link-color);
+          cursor: pointer;
+
+          .btn-add {
+            margin-left: 8px;
+          }
+        }
+      }
+
+      &-account {
+        display: flex;
+        border-bottom: 1px solid var(--border-color);
+        padding: 8px 0;
+
+        &-cell {
+          font-size: 11px;
+
+          &.-type, &.-login, &.-password {
+            flex: 0 0 30%;
+            max-width: 30%;
+          }
+
+          &.-type {
+            font-weight: 600;
+          }
+
+          &.-delete {
+            flex: 0 0 10%;
+            max-width: 10%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            span {
+              cursor: pointer;
+            }
+          }
+
+          input {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

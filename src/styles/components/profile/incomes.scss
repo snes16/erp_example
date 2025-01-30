@@ -1,0 +1,203 @@
+.incomes {
+
+  &-button {
+    margin-right: 8px;
+    
+    &.-border {
+      border-color: $primary !important;
+    }
+  }
+
+  &-details {
+    &-info {
+      flex: 0 0 calc(100% - 140px);
+      max-width: calc(100% - 140px);
+      display: flex;
+      flex-direction: column;
+
+      b {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-weight: 400;
+      }
+      .main_group {
+        height: 20px;
+        display: flex;
+        align-items: center;
+      }
+      .flag-icon {
+        margin: auto 6px auto 0;
+      }
+
+      &-model {
+        .dropdown-menu {
+          margin: 10px 0;
+        }
+      }
+
+      &-ref_models {
+        &-icon {
+          background-color: $gray-200;
+          border-radius: 50%;
+          color: $gray-text;
+          height: 20px;
+          width: 20px;
+          position: relative;
+
+          svg {
+            position: absolute;
+            left: 2px;
+            right: 2px;
+            top: 2px;
+            bottom: 2px;
+            height: 16px;
+            width: 16px;
+          }
+        }
+      }
+
+      &-icon {
+        &.glyphicon-handset {
+          height: 13px;
+          flex: 0 0 13px;
+        }
+      }
+    }
+
+    &-input {
+      text-align: left;
+      display: inline-flex;
+      min-width: 5px;
+      max-width: 138px;
+      font-size: 13px;
+      font-weight: 400 !important;
+      line-height: 20px;
+      color: $gray-700;
+    }
+
+    &-shift_data {
+      display: inline-flex;
+      font-size: 13px;
+      font-weight: 400;
+      color: $gray-700;
+
+      .mx-input-append {
+        display: none;
+      }
+
+      .input-plain {
+
+      }
+
+      .mx-datepicker {
+        width: fit-content;
+        opacity: 1;
+      }
+
+      .mx-datepicker.disabled {
+        cursor: auto;
+      }
+    }
+
+    &-body {
+      border-top: 1px solid $default;
+      margin-top: 4px;
+
+      h3 {
+        line-height: 24px;
+      }
+
+      &-line {
+        margin-top: 16px;
+        height: 33px;
+        border-bottom: 1px solid $default;
+
+        &-profit {
+          display: inline-flex;
+          width: 468px;
+
+
+          &-logo {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            border-radius: 40px;
+          }
+
+          &-income {
+            margin-left: auto;
+
+            &-text {
+              font-weight: 600;
+            }
+
+            &.-disabled {
+              color: $gray-text;
+
+              input {
+                color: $gray-text;
+              }
+            }
+          }
+        }
+
+        &:last-child {
+          border: none;
+        }
+      }
+    }
+
+    &-shift_info {
+      display: grid;
+
+      &-status {
+        padding: 2px 8px;
+        border-radius: 22px;
+        font-size: 11px;
+        white-space: nowrap;
+        width: 80px;
+        height: 20px;
+        margin-left: 8px;
+        font-weight: 500;
+
+        &.-created {
+          background-color: rgba(26, 134, 208, 0.1);
+          color: $cyan;
+        }
+
+        &.-assigned {
+          background-color: rgba(253, 167, 0, 0.1);
+          color: $yellow;
+        }
+
+        &.-canceled {
+          background-color: rgba(253, 95, 0, 0.1);
+          color: $red;
+        }
+
+        &.-process {
+          background: linear-gradient(0deg, rgba(33, 174, 140, 0.1), rgba(33, 174, 140, 0.1)), #FFFFFF;
+          color: $teal;
+        }
+
+        &.-completed {
+          background-color: $body-bg;
+          color: $gray-text;
+        }
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      .incomes-details-body-line-profit {
+        width: 100%;
+      }
+    }
+  }
+}

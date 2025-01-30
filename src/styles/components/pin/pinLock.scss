@@ -1,0 +1,252 @@
+@mixin active-dots {
+  @for $i from 1 through 6 {
+    @for $j from 1 through $i {
+      &.-active_#{$i} &-dot:nth-child(#{$j}) {
+        @content;
+      }
+    }
+  }
+
+  &.-active_none &-placeholder {
+    display: block;
+  }
+}
+
+.pin {
+  background-color: $body-bg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+
+  & &-input {
+    box-shadow: 0 8px 20px 0 #4B66AB14;
+  }
+
+  &-input {
+    width: 380px;
+    padding: 32px 40px;
+    background-color: $white;
+    border-radius: 7px;
+    max-width: 100%;
+    touch-action: manipulation;
+
+    &-title {
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 29.4px;
+      text-align: center;
+      color: #444444;
+    }
+
+    &-sub_title {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 19.5px;
+      text-align: center;
+      color: #888888;
+      margin-bottom: 16px;
+      height: 20px;
+    }
+
+    &-spacer16 {
+      height: 8px;
+    }
+
+    &-footer {
+      width: 100%;
+      text-align: center;
+      margin-top: 20px;
+
+      &-text {
+        user-select: none;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 19.5px;
+        text-align: center;
+        color: $gray-text;
+        width: 100%;
+        cursor: pointer;
+
+        &-link {
+          color: $link-color;
+        }
+      }
+    }
+
+    &-main {
+      width: 100%;
+
+      &-error {
+        font-size: 11px;
+        font-weight: 400;
+        line-height: 16px;
+        text-align: left;
+        color: $orange-alt;
+        margin-bottom: 4px;
+      }
+
+      &-input {
+        background: $default !important;
+        width: 100%;
+        height: 32px;
+        border-radius: 7px;
+        border: 1px solid transparent;
+        padding-left: 16px;
+        display: flex;
+        align-items: center;
+        gap: 2px;
+
+        @include active-dots {
+          display: block;
+        };
+
+        &-dot {
+          width: 3px;
+          height: 3px;
+          border-radius: 50%;
+          background-color: $text-color;
+          display: none;
+        }
+
+        &.-error {
+          border: 1px solid $orange-alt;
+        }
+
+        &-placeholder {
+          font-size: 13px;
+          font-weight: 400;
+          line-height: 20px;
+          text-align: left;
+          color: $gray-text;
+          display: none;
+        }
+      }
+
+      &-input_mob {
+        display: none;
+
+        &-inner {
+          margin-top: 16px;
+          display: flex;
+          width: 100%;
+          justify-content: center;
+          gap: 12px;
+
+          &-dot {
+            width: 10px;
+            height: 10px;
+            background-color: $border-color;
+            border-radius: 5px;
+          }
+
+          @include active-dots {
+            background-color: $link-color;
+          };
+        }
+      }
+
+      &-keys {
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 15px;
+
+        &-container {
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+
+          &-key {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
+            cursor: pointer;
+            touch-action: manipulation;
+
+            &-circle {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              //transition: background-color 0.2s;
+              user-select: none;
+              font-size: 32px;
+              font-weight: 600;
+              line-height: 40px;
+              text-align: center;
+              width: 56px;
+              height: 56px;
+              border-radius: 50%;
+              background-color: transparent;
+
+              &.-press {
+                background-color: $border-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .throbber {
+      width: 96px;
+      height: 96px;
+    }
+
+    span {
+      margin-top: 8px;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: center;
+      color: $gray-700;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    & &-input {
+      background-color: transparent;
+      box-shadow: none;
+    }
+
+    &-input {
+      padding: 32px 20px;
+
+      &.-modal {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+
+      &-sub_title {
+        margin-bottom: 0;
+      }
+
+
+      &-main {
+        display: flex;
+        flex-direction: column;
+
+        &-error {
+          width: 100%;
+          text-align: center;
+          margin-top: 4px;
+          margin-bottom: -2px;
+        }
+        &-input {
+          display: none;
+        }
+
+        &-input_mob {
+          display: block;
+        }
+      }
+    }
+  }
+}

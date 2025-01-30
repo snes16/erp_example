@@ -1,0 +1,299 @@
+.groups_select {
+  .abc-checkbox-circle label::before {
+    background-color: #000000 !important;
+    border-color: #000000 !important;
+  }
+  .abc-checkbox-primary input[type="radio"]:checked + label::before {
+    background-color: #000000 !important;
+    border-color: #000000 !important; }
+  .abc-checkbox-primary input[type="radio"]:indeterminate + label::before {
+    background-color: #000000 !important;
+    border-color: #000000 !important; }
+  .abc-radio-primary input[type="radio"] + label::after {
+    background-color: #000000 !important; }
+  .abc-radio-primary input[type="radio"]:checked + label::before {
+    border-color: #000000 !important; }
+  .abc-radio-primary input[type="radio"]:checked + label::after {
+    background-color: #000000 !important; }
+  .dropdown {
+    &-menu {
+      width: 350px;
+    }
+
+    &-toggle {
+      display: flex;
+      flex-direction: column;
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  &-dropdown {
+    &-container {
+      position: relative;
+      max-width: 100%;
+
+      &:after {
+        font-family: 'Line Awesome Free', sans-serif;
+        content: "\F107";
+        font-weight: 600;
+        position: absolute;
+        right: -20px;
+        top: 50%;
+        transform: translateY(-50%) rotate(0deg);
+        transition: .2s;
+        color: $text-color;
+      }
+    }
+
+    &-office {
+      white-space: normal;
+    }
+  }
+
+  &-search {
+    padding: 12px 8px 0;
+    position: relative;
+
+    &-clear {
+      transform: rotate(45deg);
+      cursor: pointer;
+      position: absolute;
+      right: 16px;
+      top: 21px;
+      z-index: 3;
+    }
+  }
+
+  &-empty {
+    padding: 0 12px;
+  }
+
+  &-item {
+    &-indent {
+      &.-lvl {
+        &-1 {
+          padding-left: 24px;
+        }
+
+        &-2 {
+          padding-left: 48px;
+        }
+
+        &-3 {
+          padding-left: 72px;
+        }
+
+        &-4 {
+          padding-left: 96px;
+        }
+
+        &-5 {
+          padding-left: 120px;
+        }
+      }
+
+      &.-clickable {
+        cursor: pointer;
+
+        &:hover {
+          background-color: $body-bg;
+        }
+      }
+    }
+
+    &-indent.-lvl-0 &-container {
+      padding-left: 8px;
+    }
+
+    &-container {
+      display: flex;
+      align-items: center;
+      padding: 8px 4px;
+      border-bottom: 1px solid var(--border-color);
+      position: relative;
+
+      &:hover &-actions-mainify {
+        opacity: 1;
+      }
+
+      &.-no-children {
+        margin-left: 24px;
+      }
+
+      &-arrow {
+        margin-right: 4px;
+        transition: .2s;
+        padding: 6px;
+
+        &.-active {
+          transform: rotate(180deg);
+        }
+
+        &.-hidden {
+          opacity: 0;
+        }
+      }
+
+      &-color {
+        height: 8px;
+        flex: 0 0 8px;
+        max-width: 8px;
+        border-radius: 50%;
+        margin-right: 8px;
+      }
+
+      &-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      &-number {
+        font-size: 10px;
+        color: $gray-text;
+        padding: 0 8px;
+        background-color: $border-color;
+        border-radius: 22px;
+        margin-left: 8px;
+      }
+
+      &-checkbox {
+        &-triple {
+          cursor: pointer;
+          display: inline;
+          vertical-align: top;
+          position: relative;
+          padding-left: 5px;
+          margin-bottom: 1rem;
+
+          &:before {
+            cursor: pointer;
+            content: "";
+            display: inline-block;
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            top: 0;
+            //right: -8px;
+            left: 0;
+            margin-left: -1.25rem;
+            border: 1px solid $gray-400;
+            border-radius: 3px;
+            background-color: white;
+            transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+          }
+
+          &:after {
+            cursor: pointer;
+            display: inline-block;
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            //right: -8px;
+            left: 0;
+            top: 0;
+            margin-left: -1.25rem;
+            padding-left: 3px;
+            padding-top: 1px;
+            font-size: 11px;
+            color: $gray-700;
+          }
+
+          &.-all {
+            &:after {
+              font-family: "FontAwesome";
+              content: "\F00C";
+            }
+          }
+
+          &.-some {
+            &:after {
+              background-color: $gray-700;
+              content: '';
+              height: 8px;
+              width: 8px;
+              border-radius: 1px;
+              top: 0;
+              //right: -8px;
+              left: -12px;
+              transform: translate(-50%, 50%);
+              margin: 0;
+            }
+          }
+        }
+      }
+
+      &-actions {
+        position: absolute;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        align-items: center;
+
+        &-mainify {
+          opacity: 0;
+          cursor: pointer;
+          color: $gray-400;
+        }
+
+        &-main {
+          color: $primary;
+        }
+
+        &-checkbox {
+          &.abc-checkbox label {
+            &:before, &:after {
+              top: 0;
+              margin-left: 0;
+            }
+          }
+        }
+
+        &-radio {
+          display: flex;
+          align-items: center;
+          margin-left: 4px;
+          justify-self: end;
+          margin-right: -40px;
+
+          label::before {
+            width: 16px !important;
+            height: 16px !important;
+            top: -4px !important;
+            left: -5px !important;
+            margin-left: -20px;
+          }
+          label::after {
+            width: 8px !important;
+            height: 8px !important;
+            top: 0px !important;
+            left: -1px !important;
+            margin-left: -20px;
+          }
+        }
+      }
+    }
+
+    &-children {
+      //padding-left: 16px;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    &-item {
+      &-container {
+        &-actions {
+          &-mainify {
+            &.-active {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}

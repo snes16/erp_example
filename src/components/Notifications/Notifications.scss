@@ -1,0 +1,48 @@
+.notifications {
+  @include media-breakpoint-up(md) {
+   width: 160px;
+ }
+
+  height: 100%;
+  border: none;
+}
+
+.cardHeader {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 0;
+}
+
+.cardFooter {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  border-top: none;
+}
+
+.header {
+  &-notify {
+    width: 160px;
+  }
+}
+
+.button-notify {
+  width: 100%;
+  background: none !important;
+  border: none !important;
+  border-radius: 0px !important;
+  font-size: 11px !important;
+  height: 40px !important;
+  text-align: left !important;
+
+}
+.button-notify:first-child {
+  border-bottom: 1px solid #EAF0F6 !important;
+}
+.btnNotificationsReload {
+  color: $navbar-link-color;
+  outline: none;
+
+  i::before {
+    top: 2px;
+  }
+}

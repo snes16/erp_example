@@ -1,0 +1,56 @@
+.edit_service {
+  &-header {
+    padding: 12px 24px;
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+
+    &-delete {
+      &.glyphicon {
+        position: absolute;
+        right: 56px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+      }
+    }
+  }
+
+  &-blocking {
+    background-color: var(--bg-color);
+    padding: 24px;
+
+    &-reason {
+      background-color: var(--bg-color);
+      padding: 10px 16px;
+      width: 100%;
+      border-radius: 7px;
+      display: block;
+    }
+  }
+
+  &-body {
+    padding: 24px;
+
+    &-title {
+      margin-bottom: 24px;
+    }
+
+    &-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+
+      &-col {
+        flex: 0 0 50%;
+        max-width: 50%;
+
+        &-input {
+          padding: 6px 16px;
+          border: none;
+          outline: none;
+
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,150 @@
+.group_creation {
+  &-header {
+    padding: 12px 24px;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  &-main_block {
+    &-text {
+      padding: 24px 24px 0;
+
+      p {
+        color: var(--gray-text);
+        margin-bottom: 8px;
+      }
+    }
+
+    &-fields {
+      &-field {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 20px 12px 24px;
+        border-bottom: 1px solid var(--border-color);
+      }
+    }
+  }
+
+  &-main {
+    h3 {
+      padding: 24px 24px 0 18px;
+    }
+
+    &-title {
+      padding: 24px 32px 8px 18px;
+    }
+
+    &-details {
+      display: flex;
+      padding: 10px 24px 12px;
+      border-bottom: 1px solid var(--border-color);
+
+      .custom_select {
+        max-width: 200px;
+      }
+
+      &-color_picker {
+        z-index: 100;
+      }
+    }
+
+    &-time_periods {
+      padding: 24px 24px 12px;
+
+      &-quantity {
+        display: flex;
+        align-items: center;
+        margin-bottom: 18px;
+
+        &-title {
+          font-weight: 600;
+          flex: 0 0 30%;
+          max-width: 30%;
+          margin-right: 48px;
+        }
+
+        &-value {
+          border: none;
+          outline: none;
+        }
+      }
+
+      &-title {
+        color: #9DA8AF;
+      }
+
+      &-period {
+        display: flex;
+        align-items: center;
+        margin-bottom: 24px;
+
+        &-title {
+          font-weight: 600;
+          flex: 0 0 40%;
+          max-width: 40%;
+        }
+
+        &-time_period {
+          display: flex;
+          flex: 0 0 60%;
+          max-width: 60%;
+
+          &-first {
+            display: flex;
+            align-items: center;
+            margin-right: 32px;
+
+            p {
+              margin: 0;
+            }
+          }
+
+          &-second {
+            display: flex;
+            align-items: center;
+            margin-right: 62px;
+
+            p {
+              margin: 0;
+            }
+          }
+
+          .mx-datepicker {
+            width: 56px;
+          }
+        }
+      }
+
+      &-add_period {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        &-text {
+          margin: 0;
+          margin-right: 8px;
+          color: #1A86D0;
+        }
+
+        &-image {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+
+    &-users {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 130px 0 0;
+
+      &-img {
+        width: 144px;
+        flex: 0 0 144px;
+      }
+    }
+  }
+}

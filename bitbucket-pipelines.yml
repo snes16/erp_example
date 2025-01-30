@@ -1,0 +1,92 @@
+frontend: &frontend
+  step:
+    name: Build Frontend
+    image: node:10.15.3
+    caches:
+      - node
+    script:
+      - source envs.sh    
+      - npm install
+      - VUE_APP_HOST_API=$VUE_APP_HOST_API VUE_APP_FIN_SYSTEM_HOST=$VUE_APP_FIN_SYSTEM_HOST VUE_APP_SENTRY_ID=$VUE_APP_SENTRY_ID VUE_APP_SENTRY_KEY=$VUE_APP_SENTRY_KEY VUE_APP_CENTRIFUGE_URL=$VUE_APP_CENTRIFUGE_URL  npm run build --mode=production
+    artifacts:
+      - dist/**
+    after-script:
+      - >
+        if [[ $BITBUCKET_EXIT_CODE -eq 0 ]]; then
+          echo "Success"
+        else
+          curl -X POST https://api.telegram.org/bot{$BOT_TOKEN}/sendMessage -d chat_id=${CHAT_ID} -d text="#Frontend branch <b>$BITBUCKET_BRANCH</b> <b>build $BITBUCKET_BUILD_NUMBER</b> finifhed with status failed. Build log: $BITBUCKET_GIT_HTTP_ORIGIN/addon/pipelines/home#!/results/$BITBUCKET_BUILD_NUMBER" -d parse_mode=HTML
+        fi
+
+deploy-frontend: &deploy-frontend
+  step:
+    name: Deploy Frontend
+    image: atlassian/default-image:2
+    script:
+      - source envs.sh  
+      - echo "Deploying Frontend"
+      - pipe: atlassian/rsync-deploy:0.4.3
+        variables:
+          USER: $USER
+          SERVER: $HOST
+          REMOTE_PATH: $PROJECT_PATH
+          LOCAL_PATH: dist/
+    after-script:
+      - source envs.sh    
+      - pipe: atlassian/ssh-run:0.2.6
+        variables:
+          SSH_USER: $USER
+          SERVER: $HOST
+          COMMAND: 'cp /var/www/project/api/public/htpasswd /var/www/project/api/frontend/public/.htpasswd'    
+      - >
+        if [[ $BITBUCKET_EXIT_CODE -eq 0 ]]; then
+          curl -X POST https://api.telegram.org/bot{$BOT_TOKEN}/sendMessage -d chat_id=${CHAT_ID} -d text="#Frontend branch <b>$BITBUCKET_BRANCH</b> <b>$(git log --pretty=%B -n 1 $BITBUCKET_COMMIT)</b> rsync-deploy success" -d parse_mode=HTML
+        else
+          curl -X POST https://api.telegram.org/bot{$BOT_TOKEN}/sendMessage -d chat_id=${CHAT_ID} -d text="#Frontend branch <b>$BITBUCKET_BRANCH</b> <b>build $BITBUCKET_BUILD_NUMBER</b> rsync-deploy finifhed with status failed. Build log: $BITBUCKET_GIT_HTTP_ORIGIN/addon/pipelines/home#!/results/$BITBUCKET_BUILD_NUMBER" -d parse_mode=HTML
+        fi                 
+
+prepare-variables: &prepare-variables
+  step:
+    name: Prepare envs
+    deployment: Test
+    script:
+      - echo "export USER=$USER" > envs.sh
+      - echo "export HOST=$HOST" >> envs.sh
+      - echo "export PROJECT_PATH=$PROJECT_PATH" >> envs.sh
+      - echo "export VUE_APP_HOST_API=$VUE_APP_HOST_API" >> envs.sh
+      - echo "export VUE_APP_FIN_SYSTEM_HOST=$VUE_APP_FIN_SYSTEM_HOST" >> envs.sh
+      - echo "export VUE_APP_SENTRY_ID=$VUE_APP_SENTRY_ID" >> envs.sh 
+      - echo "export VUE_APP_SENTRY_KEY=$VUE_APP_SENTRY_KEY" >> envs.sh
+      - echo "export VUE_APP_CENTRIFUGE_URL=$VUE_APP_CENTRIFUGE_URL" >> envs.sh
+    artifacts:
+      - envs.sh
+
+prepare-stage-variables: &prepare-stage-variables
+  step:
+    name: Prepare envs
+    deployment: stage
+    script:
+      - echo "export USER=$USER" > envs.sh
+      - echo "export HOST=$HOST" >> envs.sh
+      - echo "export PROJECT_PATH=$PROJECT_PATH" >> envs.sh
+      - echo "export VUE_APP_HOST_API=$VUE_APP_HOST_API" >> envs.sh
+      - echo "export VUE_APP_FIN_SYSTEM_HOST=$VUE_APP_FIN_SYSTEM_HOST" >> envs.sh
+      - echo "export VUE_APP_SENTRY_ID=$VUE_APP_SENTRY_ID" >> envs.sh
+      - echo "export VUE_APP_SENTRY_KEY=$VUE_APP_SENTRY_KEY" >> envs.sh
+      - echo "export VUE_APP_CENTRIFUGE_URL=$VUE_APP_CENTRIFUGE_URL" >> envs.sh
+    artifacts:
+      - envs.sh
+
+
+
+pipelines:
+  branches:
+    production*:
+      - <<: *prepare-stage-variables    
+      - <<: *frontend
+      - <<: *deploy-frontend       
+
+    master:
+      - <<: *prepare-variables    
+      - <<: *frontend
+      - <<: *deploy-frontend       

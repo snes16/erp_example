@@ -1,0 +1,9 @@
+.cancellation_reason {
+  .cancellation_reason-title {
+    text-overflow: ellipsis;
+  }
+
+  input:not(:checked) + label {
+    color: $gray-text;
+  }
+}

@@ -1,0 +1,12 @@
+.email_field {
+  display: flex;
+  align-items: center;
+
+  &-input {
+    margin-right: -2px;
+  }
+
+  &.-empty &-domain {
+    color: $gray-text;
+  }
+}

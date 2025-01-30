@@ -1,0 +1,188 @@
+.hr_stats {
+  &-main {
+    margin-bottom: 24px;
+
+    &-filters {
+      padding: 8px 24px 0;
+
+      &-top {
+        padding: 16px 0;
+        border-bottom: 1px solid $default;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .groups_select {
+          .dropdown-menu {
+            height: 320px;
+            width: 350px;
+            overflow: auto;
+          }
+        }
+
+        &-periods {
+          display: flex;
+          align-items: center;
+
+          &-icon {
+            font-size: 18px;
+            color: var(--gray-text-dark);
+            display: block;
+            height: 22px;
+            margin: 0 8px;
+          }
+
+          &-datepicker {
+            &.mx-datepicker {
+              width: 70px;
+            }
+
+            .mx-input-wrapper {
+              max-width: 100%;
+              overflow: hidden;
+            }
+          }
+        }
+      }
+
+      &-bottom {
+        padding: 16px 0;
+        display: flex;
+
+        .custom_select-content {
+          width: 280px;
+        }
+      }
+    }
+
+    &-table {
+      opacity: 1;
+      transition: .2s;
+
+      &.-loading {
+        opacity: .3;
+      }
+
+      &-row {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: $body-bg;
+        border-bottom: 1px solid $default;
+
+        &:first-child{
+          border-top: 1px solid $default;
+        }
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        &.-head, &.-foot {
+          background: none;
+        }
+
+        &.-head {
+          text-transform: uppercase;
+        }
+
+        &.-head &-cell {
+          height: 40px;
+        }
+
+        &-cell {
+          height: 53px;
+          display: flex;
+          align-items: center;
+
+          &.-title {
+            flex: 0 0 30%;
+            max-width: 30%;
+            padding-left: 24px;
+          }
+
+          &.-responses, &.-interviews, &.-registrations, &.-working {
+            flex: 0 0 15%;
+            max-width: 15%;
+          }
+
+          &.-actions {
+            flex: 0 0 10%;
+            max-width: 10%;
+            padding-right: 24px;
+            justify-content: flex-end;
+          }
+
+          &-arrow {
+            transform: none;
+            transition: .2s;
+
+            &.-active {
+              transform: rotate(180deg);
+            }
+          }
+
+          &-content {
+            &-main, &-additional {
+              margin-bottom: 0;
+            }
+
+            &-additional {
+              color: $gray-text;
+            }
+          }
+        }
+
+        &-children {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+
+        &-children &-cell.-title {
+          padding-left: 48px;
+        }
+
+        &-children &-children &-cell.-title {
+          padding-left: 60px;
+        }
+      }
+    }
+  }
+
+  &-graphs {
+    &-periods {
+      padding: 24px;
+
+      .highcharts-legend-item {
+        text {
+          font-weight: normal!important;
+        }
+      }
+    }
+
+    &-circle {
+      & > div {
+        display: flex;
+        justify-content: center;
+      }
+
+      &-empty {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 32px 24px 24px;
+
+        &-svg {
+          margin-bottom: 24px;
+        }
+
+        p {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &-bars {
+      padding: 24px;
+    }
+  }
+}

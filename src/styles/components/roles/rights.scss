@@ -1,0 +1,154 @@
+.roles {
+  display: flex;
+
+  &-content {
+    &-tab {
+      &-settings {
+        margin-bottom: 24px;
+      }
+    }
+
+    div.tooltip-inner {
+      max-width: 323px;
+      padding: 8px 16px;
+      offset: 20px;
+    }
+    &-rights {
+      &-right {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        font-style: normal;
+        font-weight: normal;
+        border-bottom: 1px solid $default;
+        padding: 12px 0;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        &-title {
+          position: relative;
+          cursor: pointer;
+
+          &-settings {
+            margin: 18px 0 12px;
+          }
+
+          &-admin {
+            position: absolute;
+            left: 0;
+            top: 100%;
+            font-size: 11px;
+            color: $gray-text;
+            white-space: nowrap;
+          }
+        }
+
+        &-select {
+          padding: 4px 8px 4px 16px;
+          border: 1px solid $default;
+          border-radius: 7px;
+          flex: 0 0 200px;
+          max-width: 200px;
+
+          &-roles {
+            padding: 4px 8px 4px 16px;
+            border: 1px solid $default;
+            border-radius: 7px;
+            flex: 0 0 337px;
+            max-width: 337px;
+            ul.dropdown-menu.show{
+              margin-top: 8px;
+              z-index: 3;
+              right: -9px !important;
+              left: auto !important;
+              div.custom_select-content{
+                width: 336px;
+                max-height: 120px;
+              }
+            }
+          }
+        }
+        &-add-body-roles {
+          height: calc(100vh - 230px);
+          overflow: auto;
+          overflow-x:hidden;
+          &-modal {
+            margin: 0 20px;
+            cursor: pointer;
+            display: flex;
+
+            &:hover {
+              background: $body-bg;
+              margin: 0 -20px;
+            }
+
+            &:hover > &-limit {
+              margin: 0 40px;
+              &:hover{
+                .custom-control-label::before {
+                  border: $info solid 1px !important;
+                }
+              }
+            }
+
+            &-limit {
+              padding: 12px 0;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              white-space: nowrap;
+              width: 600px;
+              border-bottom: 1px solid $border-color;
+            }
+          }
+        }
+
+        &-subpermissions {
+          width: 100%;
+          padding-left: 16px;
+          margin-top: 4px;
+
+            &-content {
+              margin-top: 10px;
+            }
+
+            &-checkbox {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              color: $gray-700;
+              margin-bottom: 8px;
+            }
+
+          &-list {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            margin: 0 -20px;
+
+            &:hover {
+              background: $body-bg;
+            }
+
+            &:hover > &-bell {
+              fill: $gray-text;
+            }
+
+            &-bell {
+              margin: 0 8px 0 20px;
+              cursor: pointer;
+              fill: $white;
+
+              &.-active {
+                fill: $cyan !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

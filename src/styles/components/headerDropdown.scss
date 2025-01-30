@@ -1,0 +1,53 @@
+.header_dropdown {
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+
+    &-button {
+      &.btn {
+        padding: 8px 24px;
+      }
+    }
+  }
+
+  &-body {
+    &-table {
+      &-row {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid $border-color;
+        font-size: 11px;
+        padding: 10px 0;
+        cursor: pointer;
+
+        &.-head {
+          font-size: 13px;
+          font-weight: 600;
+          padding: 6px 0;
+        }
+
+        &-cell {
+          &.-user {
+            flex: 0 0 20%;
+            max-width: 20%;
+          }
+
+          &.-date {
+            flex: 0 0 20%;
+            max-width: 20%;
+          }
+
+          &.-text {
+            flex: 0 0 60%;
+            max-width: 60%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+    }
+  }
+}

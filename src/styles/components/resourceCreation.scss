@@ -1,0 +1,74 @@
+.resource_creation {
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px 10px;
+    border-bottom: 1px solid $default;
+    height: 46px;
+  }
+
+  &-table {
+    padding: 12px;
+    margin: 0 !important;
+
+    &-row_title {
+      display: flex !important;
+      align-items: center !important;
+      border: none !important;
+
+      &::before {
+        text-align: left !important;
+      }
+
+      &-coef {
+        padding: 12px 24px !important;
+      }
+
+      &-input {
+        font-weight: 400;
+        padding: 6px 16px;
+        border: none;
+        outline: none;
+        background: none;
+
+        &.-error {
+          color: $danger;
+        }
+      }
+    }
+
+    &-values {
+      &-upload_logotype {
+        display: flex;
+
+        &-logotype {
+          margin-right: 24px;
+          background: $body-bg;
+          background-size: cover;
+        }
+      }
+
+      &-name, &-link, &-coef {
+        border: none;
+        outline: none;
+        background: none;
+      }
+
+      &-type {
+        width: 150px;
+      }
+    }
+  }
+
+  &-webcam_info {
+    border-top: 1px solid $border-color;
+    padding: 16px 0 24px;
+    margin: 0;
+  }
+
+  .input-plain {
+    color: $gray-700;
+    font-weight: 400;
+  }
+}

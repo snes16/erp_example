@@ -1,0 +1,354 @@
+.vacancies {
+  &-title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 26px;
+
+    &-text {
+      font-weight: 600;
+      font-size: 20px;
+    }
+  }
+
+  &-table {
+    padding: 24px 0 16px;
+
+    &-load {
+      min-height: 225px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      align-content: center;
+
+      &-title {
+        margin-top: 16px;
+        text-align: center;
+      }
+    }
+
+    &-container {
+      width: 100%;
+      overflow: auto;
+
+      tr {
+        border-top: 1px solid $border-color;
+      }
+
+      &.-with_add &-cell.-responses {
+        width: 150px;
+        justify-content: flex-start;
+      }
+
+      & &-cell {
+        outline: none;
+        padding: 16px 24px;
+
+        &.-title {
+          max-width: 300px;
+        }
+
+        &.-responses {
+          width: 100px;
+          display: flex;
+          justify-content: center;
+          margin-left: auto;
+          border: none;
+        }
+
+        &-content {
+          cursor: pointer;
+
+          &.-responses {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            max-width: 120px;
+            width: 100%;
+          }
+
+          &.-title, &.-group {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
+          &.-user {
+            cursor: pointer;
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+          }
+
+          &-add {
+            flex: 0 0 24px;
+            height: 24px;
+          }
+        }
+      }
+    }
+
+    .row {
+      display: none !important;
+    }
+  }
+
+  &-filtration {
+    display: flex;
+    flex-direction: column;
+    padding: 0 24px;
+
+    &.-responses {
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    &-buttons {
+      display: flex;
+      flex-wrap: wrap;
+
+      &-button {
+        background: $gray-200;
+        border-radius: 7px;
+        color: $gray-text;
+        border: 1px solid $gray-400;
+        margin-right: 12px;
+        margin-bottom: 16px;
+      }
+
+      &-search_field {
+        cursor: pointer;
+        //width: 20% !important;
+        flex: 0 0 200px;
+        max-width: 200px;
+        margin-bottom: 16px;
+      }
+    }
+
+    &-selects {
+      display: flex;
+      align-items: center;
+      margin: 0 -8px 24px;
+
+      &-search_field {
+        cursor: pointer;
+        flex: 1 1 100%;
+        max-width: 100%;
+        padding: 0 8px;
+
+        &-button.input-group-text {
+          font-size: 16px;
+        }
+
+        .input-group-text {
+          padding: 8px 12px;
+        }
+      }
+
+      &-user {
+        cursor: pointer;
+        flex: 0 0 20%;
+        max-width: 20%;
+        padding: 0 8px;
+
+        .dropdown-toggle {
+          &::after {
+            right: 0px !important;
+            font-size: 11px !important;
+          }
+        }
+
+        .dropdown-menu {
+          width: 250px;
+        }
+
+        .custom_select {
+          &-content {
+            max-height: 120px;
+          }
+        }
+      }
+    }
+
+    &-checkboxes {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+      width: 100%;
+      gap: 0 24px;
+
+      &-checkbox {
+        label {
+          &:before, &:after {
+            outline: none !important;
+            color: $white !important;
+          }
+        }
+
+        &.-new {
+          @include checkbox-color($teal);
+        }
+
+        &.-call_center {
+          @include checkbox-color($yellow);
+        }
+
+        &.-interview {
+          @include checkbox-color(#B3E645);
+        }
+
+        &.-reject {
+          @include checkbox-color($red);
+        }
+
+        &.-processed {
+          @include checkbox-color($gray-400);
+        }
+
+        &.-archive {
+          @include checkbox-color($gray-700);
+        }
+      }
+
+      .vacancies-filtration-options-cancel {
+        margin-left: auto;
+      }
+    }
+
+    &-options {
+      display: flex;
+
+      &-apply {
+        cursor: pointer;
+        color: #1A86D0;
+        text-decoration: underline;
+        margin: 0;
+        margin-right: 20px;
+      }
+
+      &-cancel {
+        cursor: pointer;
+        color: #1A86D0;
+        text-decoration: underline;
+        margin: 0;
+      }
+    }
+  }
+
+  &-pagination {
+    border-top: 1px solid $border-color;
+    border-top-right-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+    margin: 0;
+    padding: 16px 16px 0 !important;
+    color: #C1CCD3 !important;
+  }
+
+  @include media-breakpoint-down(md) {
+    &-filtration {
+      &-selects {
+        &-user {
+          flex: 0 0 30%;
+          max-width: 30%;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &-filtration {
+      &-selects {
+        &-user {
+          flex: 0 0 33.3333%;
+          max-width: 33.3333%;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    &-table {
+      margin: 0 -16px;
+
+      &-container {
+        &-cell {
+          padding: 15px;
+        }
+      }
+    }
+
+    &-title {
+      &-add_vacancy {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+
+      &-text {
+        margin-bottom: 8px;
+      }
+    }
+
+    &-filtration {
+      padding: 0 15px;
+
+      &-buttons {
+        &-search_field {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+
+        &-button {
+          margin-right: 4px;
+
+          &:last-of-type {
+            margin-right: 0;
+          }
+        }
+      }
+
+      &-selects {
+        flex-wrap: wrap;
+        margin-bottom: 0;
+
+        & > * {
+          margin-right: 0;
+          margin-bottom: 16px;
+        }
+
+        &-search_field {
+          flex: 0 0 100%;
+          max-width: 100%;
+          margin-bottom: 12px;
+        }
+
+        &-user {
+          flex: 0 0 50%;
+          max-width: 50%;
+          margin-bottom: 12px;
+        }
+      }
+
+      &-options {
+        &-cancel {
+          padding: 0 8px;
+        }
+      }
+
+      &-checkboxes {
+        &-checkbox {
+          flex: 0 0 50%;
+          max-width: 50%;
+          margin-right: 0;
+          margin-bottom: 12px;
+        }
+
+        .vacancies-filtration-options-cancel {
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+  }
+}

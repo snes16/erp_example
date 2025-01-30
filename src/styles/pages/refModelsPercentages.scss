@@ -1,0 +1,204 @@
+.ref {
+    margin-top: -21px;
+    position: relative;
+    .card {
+      background-color: $widget-bg !important;
+
+      &.-loading {
+        height: 525px !important;
+      }
+    }
+
+    &-loader {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 146px 120px;
+        span {
+          margin-top: 16px;
+        }
+    }
+
+    &-text {
+      font-weight: 400;
+      line-height: 20px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &-gray {
+        font-weight: 400;
+        line-height: 20px;
+        color: $gray-700;
+      }
+    }
+
+    &-header {
+      margin-bottom: 24px;
+
+      &-text {
+        color: $gray-700;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 16px;
+      }
+
+      &-throbber {
+        position: absolute;
+      }
+
+      &-tabs {
+        border-radius: 7px 7px 0 0;
+        background-color: $gray-200;
+        display: flex;
+
+        &-tab {
+          display: flex;
+          flex-wrap: nowrap;
+          width: 191px;
+          position: relative;
+          color: var(--gray-text);
+          background-color: var(--border-color);
+          padding: 12px 20px;
+          border-radius: 7px 7px 0 0;
+          cursor: pointer;
+          font-weight: 400;
+          line-height: 20px;
+
+          &.-referal {
+            flex: 0 0 60%;
+          }
+          &.-trainer {
+            flex: 0 0 60%;
+          }
+          &.-active {
+            color: var(--black-text);
+            background-color: $widget-bg;
+            display: block !important;
+          }
+        }
+      }
+
+      &-config {
+        &-main {
+          display: flex;
+          align-items: center;
+          //justify-content: space-between;
+          margin: 16px 24px;
+
+          &-search {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            width: 51%;
+            margin-right: 12px;
+
+            .input-group-text {
+              padding: 8px 12px;
+            }
+          }
+
+          &-group_picker {
+            cursor: pointer;
+            flex: 0 0 20%;
+            min-width: 207px;
+
+            &-select {
+              .custom_select-dropdown .dropdown-toggle.btn-default:after {
+                color: $gray-700 !important;
+              }
+              padding: 6px 12px  !important;
+              font-weight: 400 !important;
+              line-height: 20px !important;
+            }
+
+          }
+
+          &-date_picker {
+            margin-left: 12px;
+            display: flex;
+            font-weight: 400;
+            line-height: 20px;
+
+            p {
+              font-weight: 400;
+              margin: 0 4px 0 0;
+              font-size: 13px;
+              user-select: none;
+            }
+
+            &-arrow {
+              cursor: pointer;
+              color: #9DA8AF !important;
+            }
+          }
+        }
+      }
+    }
+
+    &-body {
+
+      &-main {
+        width: 100%;
+
+
+        &-table {
+          width: 100%;
+          padding: 0 25px;
+          border-top: 1px solid $default;
+
+          thead {
+            border-bottom: 1px solid $default;
+          }
+
+          tbody tr {
+            border-bottom: 1px solid $default;
+          }
+
+          tbody tr:nth-child(odd) {
+            background-color: $body-bg;
+          }
+
+          &-title {
+            margin: 10px;
+            height: 40px;
+
+            &-name {
+              padding-left: 24px;
+              width: auto;
+            }
+
+            &-quantity {
+              width: 264px !important;
+            }
+
+            &-percentage {
+              width: 164px !important;
+            }
+          }
+
+          &-row {
+            height: 44px !important;
+
+            &-fullname {
+              display: inline-flex;
+              align-items: center;
+              margin: 10px 0;
+              padding-left: 24px;
+
+              &-avatar {
+                background: $white;
+                border-radius: 100%;
+              }
+            }
+            &-zero_percent {
+              color: $orange-alt;
+            }
+          }
+        }
+      }
+    }
+  &-pagination {
+    margin: 16px;
+  }
+}

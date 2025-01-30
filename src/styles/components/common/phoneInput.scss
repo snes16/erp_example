@@ -1,0 +1,83 @@
+.vue-phone-number-input {
+  &-col {
+    padding-left: 12px!important;
+  }
+
+  .input-tel, .country-selector {
+    &__label {
+      display: none;
+    }
+  }
+
+  .input-tel, .country-selector, .input-tel .input-tel__input, .country-selector .country-selector__input {
+    height: 20px;
+    min-height: 20px;
+    font-family: inherit;
+    font-weight: 400;
+    font-size: inherit;
+
+    &::placeholder {
+      color: $gray-text;
+    }
+  }
+
+  .input-tel.is-disabled .input-tel__input, .country-selector.is-disabled .country-selector__input {
+    color: inherit;
+    background-color: white;
+  }
+
+  .input-tel.has-error .input-tel__input, .country-selector.has-error .country-selector__input {
+    color: $danger;
+
+    &::placeholder {
+      color: $danger;
+    }
+  }
+
+  .input-tel {
+    .input-tel__input {
+      border: none!important;
+      padding-top: 0!important;
+      outline: none!important;
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
+
+  .country-selector {
+    .country-selector__input {
+      border: none!important;
+      padding-top: 0!important;
+      outline: none!important;
+      font-weight: 600;
+      padding-right: 10px;
+    }
+
+    &__country-flag {
+      top: 3px;
+    }
+
+    &__toggle {
+      right: 0;
+      top: -2px;
+    }
+
+    .iti-flag {
+      margin: 0;
+    }
+
+    &__list {
+      &__item {
+        border-bottom: 1px solid $border-color;
+        font-size: 16px;
+      }
+    }
+  }
+
+  &.flex .select-country-container {
+    flex: 0 0 95px;
+    width: 95px;
+    min-width: 95px;
+    max-width: 95px;
+  }
+}

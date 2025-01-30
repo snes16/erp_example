@@ -1,0 +1,57 @@
+.resource_guide {
+  &-title {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 18px;
+  }
+
+  &-tab {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 20px;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(75, 102, 171, 0.08);
+    border-radius: 7px;
+
+    &-title {
+      margin: 0;
+    }
+  }
+
+  &-tab_field {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(75, 102, 171, 0.08);
+    border-radius: 7px;
+    margin-top: 16px;
+    cursor: pointer;
+
+    &-router {
+      text-decoration: none;
+
+      &:hover, &:focus, &:active, &:visited {
+        color: $text-color;
+        text-decoration: none;
+
+
+        .resource_guide-tab_field-tab-title {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &-tab {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 20px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border-color);
+
+      &-title {
+        margin: 0;
+      }
+    }
+  }
+}

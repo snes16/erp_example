@@ -1,0 +1,67 @@
+.dossier_template {
+    &-header {
+        height: 48px;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    &-title {
+        padding: 24px 0 18px 24px;
+        font-weight: 600;
+        font-size: 20px;
+
+        &.-show_border {
+            border-bottom: 1px solid var(--border-color);
+        }
+    }
+
+    &-add_parameter {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        margin: 0 24px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid var(--border-color);
+
+        &-text {
+            font-size: 13px;
+            color: #1A86D0;
+            margin: 0;
+            margin-right: 8px;
+        }
+    }
+
+    &-row {
+        display: flex;
+        align-items: center;
+        margin: 0 24px;
+        padding: 24px 0;
+        border-bottom: 1px solid var(--border-color);
+
+        &-title {
+            cursor: default;
+            margin: 0;
+            flex: 0 0 40%;
+            max-width: 40%;
+            font-weight: 600;
+        }
+
+        &-value {
+            border: none;
+            flex: 0 0 55%;
+            max-width: 55%;
+            outline: none;
+
+            &::placeholder {
+                color: #9DA8AF;
+            }
+            
+            &:disabled {
+                background: none;
+            }
+        }
+
+        &-delete {
+            cursor: pointer;
+        }
+    }
+}

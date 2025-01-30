@@ -1,0 +1,17 @@
+.banks {
+  &-table {
+    &-logo {
+      width: 10%;
+    }
+
+    &-title {
+      width: 50%;
+      vertical-align: middle !important;
+    }
+
+    &-country {
+      width: 40%;
+      vertical-align: middle !important;
+    }
+  }
+}

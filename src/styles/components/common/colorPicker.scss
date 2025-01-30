@@ -1,0 +1,31 @@
+.color_picker {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+
+  &-dot {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+
+  &-title {
+    color: var(--gray-text);
+  }
+
+  &-picker {
+    position: absolute;
+    left: 0;
+    top: 20px;
+    z-index: 1;
+  }
+
+  &:after {
+    content: "\F104";
+    font: normal normal normal 14px/1 FontAwesome;
+    transform: rotate(-90deg);
+    margin-left: 8px;
+  }
+}
